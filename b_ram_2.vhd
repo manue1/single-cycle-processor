@@ -65,19 +65,19 @@ architecture NoChange of B_RAM_2 is
 	type RAM_TYPE is array (0 to (2**addr_width) - 1) of
 				STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	-- Speicher als interne Komponente definieren und initialisieren
-signal ram: RAM_TYPE:= (others => (others => 'O'));
+	signal ram: RAM_TYPE:= (others => (others => '0'));
 begin
-NC: process (Clk)
-begin
-if (rising_edge (Clk)) then
-if (WE = '1') then
-—— synchroner Schreibzugriff
-ram(conv_integer (Addr)) <= DI;
-else
--- synchroner Lesezugriff
-DO <= ram(conv_integer (Addr));
-end if;
-end if;
-end process NC;
+	NC: process (Clk)
+	begin
+		if (rising_edge (Clk)) then
+			if (WE = '1') then
+				-- synchroner Schreibzugriff
+				ram(conv_integer (Addr)) <= DI;
+			else
+				-- synchroner Lesezugriff
+				DO <= ram(conv_integer (Addr));
+			end if;
+		end if;
+	end process NC;
 end NoChange;
 
