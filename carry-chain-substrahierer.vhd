@@ -1,17 +1,19 @@
 library IEEE;
 use IEEE .STD_LOGIC_11641.ALL;
+
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
+
 entity Full_Subtracter_3 is
-generic (width: integer:= 8);
-port (M: in STD_LOGIC_VECTOR (width - 1 downto 0);
-S: in STD_LOGIC_VECTOR (width - 1 downto 0);
-Q: out STD_LOGIC_VECTOR (width — 1 downto 0);
-Co: out STD_LOGIC);
-end Full Subtracter 3;
+	generic (width: integer:= 8);
+	port (	M: in STD_LOGIC_VECTOR (width - 1 downto 0);
+			S: in STD_LOGIC_VECTOR (width - 1 downto 0);
+			Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
+			Co: out STD_LOGIC);
+end Full_Subtracter_3;
 
 -- Komponentenbasiertes Verhalten
-architecture Behavio of Full_Substracter_3 is
+architecture Behavior of Full_Substracter_3 is
 	--Carry-Multiplexer
 	component MUXCY
 		port (CI: in STD_ULOGIC;	-- CIN
@@ -20,9 +22,9 @@ architecture Behavio of Full_Substracter_3 is
 			  O: out STD_ULOGIC);	-- Ergebnis der Addition
 	end component;
 
--- interne Vektoren
-signal c: STD_LOGIC_VECTOR (width downto 0);		-- Uebertraege
-signal p: STD_LOGIC_VECTOR (width - 1 downto 0);	-- Steuerung Carry-Multiplexer
+	-- interne Vektoren
+	signal c: STD_LOGIC_VECTOR (width downto 0);		-- Uebertraege
+	signal p: STD_LOGIC_VECTOR (width - 1 downto 0);	-- Steuerung Carry-Multiplexer
 
 begin
 	-- XOR-Gatter am Eingang
