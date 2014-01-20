@@ -1,0 +1,7 @@
+V3 3
+FL //vboxsrv/github/picoblaze-processor/logic-unit.vhd 2014/01/18.17:51:20 P.28xd
+EN work/LogicUnit 1390063883 \
+      FL //vboxsrv/github/picoblaze-processor/logic-unit.vhd \
+      PB ieee/std_logic_1164 1341906176
+AR work/LogicUnit/Behavior 1390063884 \
+      FL //vboxsrv/github/picoblaze-processor/logic-unit.vhd EN work/LogicUnit 1390063883

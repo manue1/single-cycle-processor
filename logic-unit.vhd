@@ -4,18 +4,18 @@ use IEEE.STD_LOGIC_1164.ALL;
 entity LogicUnit is
 	generic (width: positive);
 	port (-- Datenleitungen
-			A: in STD LOGIC VECTOR (width - 1 downto 0); -- Operand 1
-			B: in STD LOGIC VECTOR (width - 1 downto 0); -- Operand 2
-			Q: out STD LOGIC VECTOR (width - 1 downto 0); -- Ergebnis
-			Co: out STD LOGIC; -- Ubertrag
+			A: in STD_LOGIC_VECTOR (width - 1 downto 0); -- Operand 1
+			B: in STD_LOGIC_VECTOR (width - 1 downto 0); -- Operand 2
+			Q: out STD_LOGIC_VECTOR (width - 1 downto 0); -- Ergebnis
+			Co: out STD_LOGIC; -- Ubertrag
 		  -- Steuerleitungen
-			Op: in STD LOGIC VECTOR (1 downto 0); 	-- Bits 14 und 13 des Befehlskodes
-													-- 01 -> AND, TEST
-													-- 10 -> OR
-													-- 11 -> XOR
-			Test: in STD_LOGIC); 					-- Bit 15 des Befehlskodes
-													-- 0 -> TEST
-													-- 1 -> AND, OR, XOR 
+			Op: in STD_LOGIC_VECTOR (1 downto 0); 	-- Bits 14 und 13 des Befehlskodes
+																-- 01 -> AND, TEST
+																-- 10 -> OR
+																-- 11 -> XOR
+			Test: in STD_LOGIC);		-- Bit 15 des Befehlskodes
+											-- 0 -> TEST
+											-- 1 -> AND, OR, XOR 
 end LogicUnit;
 
 architecture Behavior of LogicUnit is
