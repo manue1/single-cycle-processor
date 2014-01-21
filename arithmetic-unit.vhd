@@ -18,7 +18,7 @@ entity ArithmeticUnit is
 end ArithmeticUnit;
 
 architecture Behavior of ArithmeticUnit is
-	-- Addierer
+	-- Addierer (ADD)
 	component Full_Adder
 		generic (width: positive);
 		port (A, B: in STD_LOGIC_VECTOR (width - 1 downto 0);
@@ -27,11 +27,39 @@ architecture Behavior of ArithmeticUnit is
 			  Co: out STD_LOGIC);
 	end component Full_Adder;
 
--- Eingangssignal des Addierers
+	-- Addierer (ADDCY)
+	component Full_Adder_3
+		generic (width: positive);
+		port (A: in STD_LOGIC_VECTOR (width - 1 downto 0);
+				B: in STD_LOGIC_VECTOR (width - 1 downto 0);
+				Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
+				Co: out STD_LOGIC);
+	end component;
+	
+	-- Substrahierer (SUB) und COMPARE
+	component Full_Subtracter
+		generic (width: positive);
+		port (M: in STD_LOGIC; -- Minuend
+				S: in STD_LOGIC; -- Subtrahend
+				Ci: in STD_LOGIC; -- Ubertrag am Eingang
+				Q: out STD_LOGIC; -- Ergebnis
+				Co: out STD_LOGIC); -- Ubertrag am Ausgang
+	end component;
+	
+	-- Substrahierer (SUBCY)
+	component Full_Subtracter_3
+		generic (width: positive);
+		port (M: in STD_LOGIC_VECTOR (width - 1 downto 0);
+				S: in STD_LOGIC_VECTOR (width - 1 downto 0);
+				Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
+				Co: out STD_LOGIC);
+	end component;
+
+-- Eingangssignal des Addierers und des Substrahierers
 signal op1: STD_LOGIC_VECTOR (width - 1 downto 0);
--- Uebertrag am Eingang des Addierers
+-- Uebertrag am Eingang des Addierers und des Substrahierers
 signal cyi: STD_LOGIC;
--- Ergebnis des Addierers
+-- Ergebnis des Addierers und des Substrahierers
 signal result: STD_LOGIC_VECTOR (width - 1 downto 0);
 
 -- 2-zu-1 Multiplexer
@@ -53,10 +81,32 @@ begin
 	-- Umschaltung des Eingangsuebertrages
 	CI_MUX: Multiplexer_2_to_1 port map(A => '0', B => Ci, Y => cyi, S => Op(0));
 
-	-- Komponente zum Addieren
+	-- Komponente zum Addieren --
+	
+	-- ADD Komponent
+	
 	ADD: Full_Adder
 		generic map (width => width)
 		port map(A => op1, B => B, Ci => cyi, Q => result, Co => Co);
+		
+	-- ADDCY Komponent
+	
+	ADDCY: Full_Adder_3
+		generic map (width => width)
+		port map(A => A, B => B, Q => result, Co => Co);
+		
+	-- Komponente zum Substrahieren --
+
+	-- SUB und COMPARE Komponent
+	
+	SUB: Full_Subtracter
+		generic map (width => width)
+		port map(M => op1, S => B, Ci => cyi, Q => result,)
+		
+	-- SUBCY Komponent
+	
+	SUBCY: Full_Subtracter_3
+		generic map (width => width)
 
 	-- Umschaltung des Ergebnisses
 	process (Op, result)

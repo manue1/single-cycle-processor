@@ -32,12 +32,21 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Adder_2.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Adder_2.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Adder_2.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Adder_3.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Adder_3.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Adder_3.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Substracter_3.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Substracter_3.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Substracter_3.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Subtracter.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Subtracter.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Subtracter.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Subtracter_2.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Subtracter_2.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Subtracter_2.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Subtracter_3.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Subtracter_3.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Subtracter_3.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 
