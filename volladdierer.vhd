@@ -4,10 +4,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 -- Voll-Addierer
 entity Full_Adder is
 	port (	E1: in STD_LOGIC; -- Eingang 1
-			E2: in STD_LOGIC; -- Eingang 2
-			Ci: in STD_LOGIC; -- Ubertrag am Eingang
-			Q: out STD_LOGIC; -- Ergebnis
-			Co: out STD_LOGIC); -- Ubertrag am Ausgang
+				E2: in STD_LOGIC; -- Eingang 2
+				Ci: in STD_LOGIC; -- Ubertrag am Eingang
+				Q: out STD_LOGIC; -- Ergebnis
+				Co: out STD_LOGIC); -- Ubertrag am Ausgang
 end Full_Adder;
 
 -- vollstandig logikbasierter Addierer
