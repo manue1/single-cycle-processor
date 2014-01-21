@@ -8,25 +8,20 @@
       <ClosedNodes>
          <ClosedNodesVersion>2</ClosedNodesVersion>
          <ClosedNode>/ArithmeticUnit - Behavior G:|picoblaze-processor|arithmetic-unit.vhd</ClosedNode>
-         <ClosedNode>/ArithmeticUnit - Behavior Z:|picoblaze-processor|arithmetic-unit.vhd</ClosedNode>
-         <ClosedNode>/FlagRegister - Behavior Z:|picoblaze-processor|flag-register.vhd</ClosedNode>
-         <ClosedNode>/Full_Adder_2 - Carry_Ripple Z:|picoblaze-processor|carry-ripple+lookahead-volladdierer.vhd</ClosedNode>
          <ClosedNode>/Full_Adder_2 - Carry_Ripple Z:|picoblaze-processor|carry-ripple-volladdierer.vhd</ClosedNode>
          <ClosedNode>/Full_Subtracter_2 - Behavior C:|temp|college|ic-entwurf|picoblaze-processor|vollsubstrahierer-variante-2.vhd</ClosedNode>
-         <ClosedNode>/Full_Subtracter_2 - Behavior Z:|picoblaze-processor|vollsubstrahierer-variante-2.vhd</ClosedNode>
          <ClosedNode>/HardwareAccessUnit - Behavioral C:|temp|college|ic-entwurf|picoblaze-processor|harware-access-unit.vhd</ClosedNode>
          <ClosedNode>/HardwareAccessUnit - Behavioral G:|picoblaze-processor|hardware-access-unit.vhd</ClosedNode>
-         <ClosedNode>/HardwareAccessUnit - Behavioral Z:|picoblaze-processor|hardware-access-unit.vhd</ClosedNode>
          <ClosedNode>/ShiftUnit - Behavior C:|temp|college|ic-entwurf|picoblaze-processor|shift-unit.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>ShiftUnit - Behavior (Z:/picoblaze-processor/shift-unit.vhd)</SelectedItem>
+         <SelectedItem>DataMemoryUnit - Behavior (Z:/picoblaze-processor/data-memory-unit.vhd)</SelectedItem>
       </SelectedItems>
-      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="vertical" >57</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000202000000010000000100000064000001b6000000020000000000000000000000000200000064ffffffff000000810000000300000002000001b60000000100000003000000000000000100000003</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>ShiftUnit - Behavior (Z:/picoblaze-processor/shift-unit.vhd)</CurrentItem>
+      <CurrentItem>DataMemoryUnit - Behavior (Z:/picoblaze-processor/data-memory-unit.vhd)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>

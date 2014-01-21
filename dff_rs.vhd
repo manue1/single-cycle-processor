@@ -43,7 +43,7 @@ end Behavior_2;
 architecture Behavior_3 of DFF_RS is
 	signal outp: STD_LOGIC;
 begin
-	outp <= '0‘ when (R = '1')
+	outp <= '0' when (R = '1')
 		else '1' when (S = '1')
 		else D when (rising_edge (C));
 	Q <= outp;

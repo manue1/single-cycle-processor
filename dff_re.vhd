@@ -10,7 +10,7 @@ entity DFlipFlop_RE is
 end DFlipFlop_RE;
 
 architecture Behavior of DFlipFlop_RE is
-	signal output: STD_LOGIC := 'U‘;
+	signal output: STD_LOGIC := 'U';
 begin
 	process (C, R)
 	begin
