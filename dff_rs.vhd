@@ -17,7 +17,7 @@ begin
 	begin
 		if (R = '1') then
 			outp <= '0‘;
-		elsif (S = '1‘) then
+		elsif (S = '1') then
 			outp <= '1';
 		elsif (rising_edge (C)) then
 			outp <= D;
@@ -59,8 +59,8 @@ begin
 		if (rising_edge (C)) then
 			if (R = '1') then
 				outp <= '0';
-			elsif (S = '1‘) then
-				outp <= '1‘;
+			elsif (S = '1') then
+				outp <= '1';
 			else
 				outp <= D;
 			end if;

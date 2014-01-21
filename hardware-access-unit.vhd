@@ -45,5 +45,5 @@ begin
 		port map (C => CLK, D => data_in, E => WAIT_CNTRL, R => reset, Q => int_strobe);
 	Strobe <= int_strobe;
 	READ_STROBE <= int_strobe when OP_CODE = '0' else '0';
-	WRITE_STROBE <= int_strobe when OP_CODE = '1' else '0':
+	WRITE_STROBE <= int_strobe when OP_CODE = '1' else '0';
 end Behavioral;

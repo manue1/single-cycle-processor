@@ -11,7 +11,7 @@ entity D_RAM is
 			DO: out STD_LOGIC; -- gelesene Daten
 			Clk: in STD_LOGIC; -- Schreibtakt
 			WE: in STD_LOGIC); -- Schreibfreigabe
-end D_RAM:
+end D_RAM;
 
 architecture Behavior of D_RAM is
 	-- RAM16X1S: 16 X 1 positive edge write distributed (LUT) RAM

@@ -16,7 +16,7 @@ begin
 	begin
 		if R = '1' then
 			-- asynchrones Rucksetzen
-			output <= '0':
+			output <= '0';
 		elsif (rising_edge (C)) then
 			if (E = '1') then
 				-- synchroner Schreibzugriff
@@ -25,5 +25,5 @@ begin
 		end if;
 	end process;
 	-- asynchroner Lesezugriff
-	Q <= output:
+	Q <= output;
 end Behavior;

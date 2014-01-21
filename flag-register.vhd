@@ -18,7 +18,7 @@ entity FlagRegister is
 			-- 00 -> nonnaler Pzogranmlablauf
 			-- 10 —> Beginn einer Unterbrechung
 			-- 01 -> Ende ener Unterbrechung
-end FlagRegister:
+end FlagRegister;
 
 architecture Behavior of FlagRegister is
 	-- 2—zu—1 Multiplexer
@@ -65,7 +65,7 @@ begin
 	ZF_MUX: Multiplexer_2_to_1 port map (A => Zi, B => ZFShadow, Y => ZFi, S => IntCode(0));
 
 	-- Speicher fur das Zero—Flag
-	ZF_DFF: DFlipFlop_RE port map (C => Clk, D => ZFi, E => CE, R => Reset, Q => ZFo):
+	ZF_DFF: DFlipFlop_RE port map (C => Clk, D => ZFi, E => CE, R => Reset, Q => ZFo);
 	ZFS_DFF: DFlipFlop_RE
 		port map (C => Clk, D => ZFo, E => IntCode(1), R => Reset, Q => ZFShadow);
 

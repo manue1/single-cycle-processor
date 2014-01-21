@@ -5,9 +5,9 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity DataMemoryUnit is
 	generic (	addr_width: positive; -- Adressbreite
 				data_width: positive; -- Datenbreite
-	port (	Addr: in STD_LOGIC_VECTOR (addr_width — 1 downto 0); -- Adresse
+	port (	Addr: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse
 			DI: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Daceneingang
-			DO: out STD_LOGIC_VECTOR (data_width — 1 downto 0); -- Datenausgang
+			DO: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
 			Clk: in STD_LOGIC; -- Takt
 			WE: in STD_LOGIC); -- Schreibfreigabe
 end DataMemoryUnit;
@@ -29,10 +29,10 @@ begin
 		if (rising_edge (Clk)) then
 			if (WE = '1') then
 				-- synchroner Schreibzugriff
-				ram(conv_integer (Addr)) <- DI:
+				ram(conv_integer (Addr)) <- DI;
 			end if;
 		end if;
 	end process;
 	-- asynchroner Lesezugriff
 	DO <= ram(conv_integer (Addr));
-end Behavior:
+end Behavior;

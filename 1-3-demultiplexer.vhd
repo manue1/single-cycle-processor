@@ -7,7 +7,7 @@ port (	-- Datenleitungen
 		Q: out STD_LOGIC_VECTOR (2 downto 0); -- Ausgang
 		-- Steuerleitungen
 		S: in STD_LOGIC_VECTOR (1 downto 0));
-end Demultiplexer:
+end Demultiplexer;
 
 architecture Behavior_When of Demultiplexer is
 begin
