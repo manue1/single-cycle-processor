@@ -1,13 +1,30 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+package dmux_lib_1_3 is
+
+component Demultiplexer is
+port (	-- Datenleitungen
+		A: in STD_LOGIC; -- Eingang
+		Q: out STD_LOGIC_VECTOR (2 downto 0); -- Ausgang
+		-- Steuerleitungen
+		S: in STD_LOGIC_VECTOR (1 downto 0));
+end component;
+
+end dmux_lib_1_3;
+
+-- End of Demultiplexer 1 to 3 Library
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
 entity Demultiplexer is
 port (	-- Datenleitungen
 		A: in STD_LOGIC; -- Eingang
 		Q: out STD_LOGIC_VECTOR (2 downto 0); -- Ausgang
 		-- Steuerleitungen
 		S: in STD_LOGIC_VECTOR (1 downto 0));
-end Demultiplexer:
+end Demultiplexer;
 
 architecture Behavior_When of Demultiplexer is
 begin

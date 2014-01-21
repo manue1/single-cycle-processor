@@ -2,6 +2,8 @@
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
+use work.full_logic_adder_lib.all;
+
 entity Full_Adder_2 is
 	port (	A: in STD_LOGIC_VECTOR (7 downto 0);
 	   		B: in STD_LOGIC_VECTOR (7 downto 0);
@@ -32,7 +34,7 @@ begin
 	C8 <= c(8);
 end Carry_Ripple;
 
--- Carry—Look—Ahead—Addierer
+-- Carry-Look-Ahead-Addierer
 architecture Carry_Look_Ahead of Full_Adder_2 is
 	-- interne Vektoren
 	signal c: STD_LOGIC_VECTOR (7 downto 0); -- Ubertrage

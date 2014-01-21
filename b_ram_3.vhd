@@ -3,9 +3,9 @@ use IEEE.STD_LOGIC_1l64.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity B_RAM_3 is
-	generic (	addr_width: integer := 4; -- Adressbreite
+	generic (addr_width: integer := 4; -- Adressbreite
 				data_width: integer := 1); -- Datenbreite
-	port (	Addr: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse
+	port (Addr: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse
 			DI: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Dateneingang
 			DO: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
 			Clk: in STD_LOGIC; -- Takt
