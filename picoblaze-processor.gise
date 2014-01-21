@@ -21,31 +21,7 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="picoblaze-processor.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema">
-    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DFF_RS.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DFF_RS.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="DFF_RS.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Demultiplexer.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Demultiplexer.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="Demultiplexer.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Adder.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Adder.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Adder.xst"/>
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LogicUnit.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LogicUnit.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="LogicUnit.xst"/>
-<<<<<<< HEAD
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Multiplexer.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Multiplexer.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="Multiplexer.xst"/>
-=======
-    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ShiftUnit.prj"/>
-    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ShiftUnit.stx"/>
-    <file xil_pn:fileType="FILE_XST" xil_pn:name="ShiftUnit.xst"/>
->>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
-    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
-  </files>
+  <files xmlns="http://www.xilinx.com/XMLSchema"/>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
 
