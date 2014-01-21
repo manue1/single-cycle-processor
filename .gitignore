@@ -56,3 +56,5 @@ xst/
 _ngo/
 _xmsgs/
 *.xmsgs
+
+.DS_Store
