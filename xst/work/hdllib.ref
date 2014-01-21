@@ -1,5 +1,6 @@
 EN multiplexer NULL //vboxsrv/github/picoblaze-processor/3-1-multiplexer.vhd sub00/vhpl03 1390256784
 AR logicunit behavior //vboxsrv/github/picoblaze-processor/logic-unit.vhd sub00/vhpl01 1390063884
+<<<<<<< HEAD
 AR multiplexer behavior_if //vboxsrv/github/picoblaze-processor/3-1-multiplexer.vhd sub00/vhpl07 1390256788
 AR multiplexer behavior_when //vboxsrv/github/picoblaze-processor/3-1-multiplexer.vhd sub00/vhpl04 1390256785
 AR dff_rs behavior_1 //vboxsrv/github/picoblaze-processor/dff_rs.vhd sub00/vhpl11 1390257290
@@ -20,4 +21,7 @@ AR demultiplexer behavior_case //vboxsrv/github/picoblaze-processor/1-3-demultip
 AR demultiplexer behavior_with //vboxsrv/github/picoblaze-processor/1-3-demultiplexer.vhd sub00/vhpl17 1390257432
 AR full_adder logic_adder //vboxsrv/github/picoblaze-processor/volladdierer.vhd sub00/vhpl22 1390257541
 PH mux_lib_3_1 NULL //vboxsrv/github/picoblaze-processor/3-1-multiplexer.vhd sub00/vhpl02 1390256783
+=======
+EN shiftunit NULL "//vmware-host/shared folders/picoblaze-processor/shift-unit.vhd" sub00/vhpl02 1390304824
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
 EN logicunit NULL //vboxsrv/github/picoblaze-processor/logic-unit.vhd sub00/vhpl00 1390063883

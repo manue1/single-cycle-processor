@@ -11,13 +11,13 @@
          <ClosedNode>/FlagRegister - Behavior G:|picoblaze-processor|flag-register.vhd</ClosedNode>
          <ClosedNode>/Full_Adder_2 - Carry_Ripple Z:|picoblaze-processor|carry-ripple-volladdierer.vhd</ClosedNode>
          <ClosedNode>/Full_Subtracter_2 - Behavior C:|temp|college|ic-entwurf|picoblaze-processor|vollsubstrahierer-variante-2.vhd</ClosedNode>
-         <ClosedNode>/Full_Subtracter_2 - Behavior Z:|picoblaze-processor|vollsubstrahierer-variante-2.vhd</ClosedNode>
          <ClosedNode>/HardwareAccessUnit - Behavioral C:|temp|college|ic-entwurf|picoblaze-processor|harware-access-unit.vhd</ClosedNode>
          <ClosedNode>/HardwareAccessUnit - Behavioral G:|picoblaze-processor|hardware-access-unit.vhd</ClosedNode>
          <ClosedNode>/ShiftUnit - Behavior C:|temp|college|ic-entwurf|picoblaze-processor|shift-unit.vhd</ClosedNode>
          <ClosedNode>/ShiftUnit - Behavior G:|picoblaze-processor|shift-unit.vhd</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
+<<<<<<< HEAD
          <SelectedItem>Full_Adder_2 - Carry_Ripple (G:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >9</ScrollbarPosition>
@@ -25,6 +25,15 @@
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
       <CurrentItem>Full_Adder_2 - Carry_Ripple (G:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd)</CurrentItem>
+=======
+         <SelectedItem>umschalter-datenpfad.vhd (Z:/picoblaze-processor/umschalter-datenpfad.vhd)</SelectedItem>
+      </SelectedItems>
+      <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
+      <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
+      <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000020d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000020d0000000100000003000000000000000100000003</ViewHeaderState>
+      <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
+      <CurrentItem>umschalter-datenpfad.vhd (Z:/picoblaze-processor/umschalter-datenpfad.vhd)</CurrentItem>
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -47,7 +56,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000000000000000100000000000000000000000000000000000002a2000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001d60000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000250000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001840000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>1-3-demultiplexer.vhd</CurrentItem>
    </ItemView>
@@ -77,7 +86,7 @@
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000198000000010000000100000000000000000000000064ffffffff000000810000000000000001000001980000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem></CurrentItem>
    </ItemView>

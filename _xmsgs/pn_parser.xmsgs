@@ -8,24 +8,48 @@
 <!-- Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/2-1-multiplexer.vhd&quot; into library work</arg>
 </msg>
 
 <msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/2-1-multiplexer.vhd</arg>&quot; Line <arg fmt="%d" index="2">2</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/2-1-multiplexer.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/b_ram.vhd&quot; into library work</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/2-1-multiplexer.vhd</arg>&quot; Line <arg fmt="%d" index="2">2</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/b_ram.vhd</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/3-1-multiplexer.vhd&quot; into library work</arg>
 </msg>
 
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/3-1-multiplexer.vhd</arg>&quot; Line <arg fmt="%d" index="2">2</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/4-1-multiplexer.vhd&quot; into library work</arg>
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/4-1-multiplexer.vhd</arg>&quot; Line <arg fmt="%d" index="2">2</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/b_ram.vhd&quot; into library work</arg>
+</msg>
+
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/b_ram_3.vhd&quot; into library work</arg>
+=======
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/b_ram.vhd</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/b_ram_3.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/b_ram_3.vhd&quot; into library work</arg>
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
 </msg>
 
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/b_ram_3.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+</msg>
+
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd&quot; into library work</arg>
 </msg>
 
@@ -33,56 +57,94 @@
 </msg>
 
 <msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd</arg>&quot; Line <arg fmt="%d" index="2">58</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&gt;&quot;.</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/d_ram.vhd&quot; into library work</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd</arg>&quot; Line <arg fmt="%d" index="2">47</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&apos;&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/d_ram.vhd</arg>&quot; Line <arg fmt="%d" index="2">14</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/carry-ripple+lookahead-volladdierer.vhd</arg>&quot; Line <arg fmt="%d" index="2">56</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&gt;&quot;.</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/d_ram_2.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/control-unit.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/d_ram_2.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/control-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">1</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/d_rom.vhd&quot; into library work</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/control-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">132</arg>. <arg fmt="%s" index="3">Syntax error near &quot;interrupt&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/d_rom.vhd</arg>&quot; Line <arg fmt="%d" index="2">14</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/control-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">151</arg>. <arg fmt="%s" index="3">Syntax error near &quot;€&quot;.</arg>
 </msg>
 
-<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/data-memory-unit.vhd&quot; into library work</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/d_ram_2.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">8</arg>. <arg fmt="%s" index="3">Syntax error near &quot;port&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/d_ram_2.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">10</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/d_rom.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/d_rom.vhd</arg>&quot; Line <arg fmt="%d" index="2">14</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">32</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&lt;&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/data-memory-unit.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">38</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">8</arg>. <arg fmt="%s" index="3">Syntax error near &quot;port&quot;.</arg>
 </msg>
 
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">18</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/data-memory-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">32</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&lt;&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/dff_rs.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/dff_rs.vhd</arg>&quot; Line <arg fmt="%d" index="2">19</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&apos;&quot;.</arg>
+</msg>
+
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/flag-register.vhd&quot; into library work</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/flag-register.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/flag-register.vhd</arg>&quot; Line <arg fmt="%d" index="2">21</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/flag-register.vhd</arg>&quot; Line <arg fmt="%d" index="2">75</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&apos;&quot;.</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/flag-register.vhd</arg>&quot; Line <arg fmt="%d" index="2">68</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/instruction-decode-unit.vhd&quot; into library work</arg>
 </msg>
 
-<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">G:/picoblaze-processor/flag-register.vhd</arg>&quot; Line <arg fmt="%d" index="2">75</arg>. <arg fmt="%s" index="3">Syntax error near &quot;€&quot;.</arg>
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/instruction-decode-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">12</arg>. <arg fmt="%s" index="3">Syntax error near &quot;:&quot;.</arg>
 </msg>
 
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/instruction-decode-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">56</arg>. <arg fmt="%s" index="3">Syntax error near &quot;â&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/instruction-fetch-unit.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/instruction-fetch-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">79</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&lt;&quot;.</arg>
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/instruction-fetch-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">88</arg>. <arg fmt="%s" index="3">Syntax error near &quot;&gt;&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/shift-unit.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/shift-unit.vhd</arg>&quot; Line <arg fmt="%d" index="2">55</arg>. <arg fmt="%s" index="3">Syntax error near &quot;1&quot;.</arg>
+</msg>
+
+<<<<<<< HEAD
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/hardware-access-unit.vhd&quot; into library work</arg>
 </msg>
 
@@ -102,6 +164,15 @@
 </msg>
 
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;G:/picoblaze-processor/volladdierer.vhd&quot; into library work</arg>
+=======
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/umschalter-datenpfad.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="error" file="ProjectMgmt" num="806" >&quot;<arg fmt="%s" index="1">Z:/picoblaze-processor/umschalter-datenpfad.vhd</arg>&quot; Line <arg fmt="%d" index="2">2</arg>. <arg fmt="%s" index="3">Syntax error near &quot;signal&quot;.</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;Z:/picoblaze-processor/volladdierer.vhd&quot; into library work</arg>
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
 </msg>
 
 </messages>

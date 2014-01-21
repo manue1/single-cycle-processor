@@ -35,7 +35,11 @@ begin
 	P1: process (R, S, C)
 	begin
 		if (R = '1') then
+<<<<<<< HEAD
 			outp <= '0';
+=======
+			outp <= '0‘;
+>>>>>>> 0704432b0dcbdf1b4020f0bc8c99c7b7a51eed24
 		elsif (S = '1') then
 			outp <= '1';
 		elsif (rising_edge (C)) then
