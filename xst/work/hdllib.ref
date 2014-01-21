@@ -1,2 +1,3 @@
 AR logicunit behavior //vboxsrv/github/picoblaze-processor/logic-unit.vhd sub00/vhpl01 1390063884
+EN shiftunit NULL "//vmware-host/shared folders/picoblaze-processor/shift-unit.vhd" sub00/vhpl02 1390304824
 EN logicunit NULL //vboxsrv/github/picoblaze-processor/logic-unit.vhd sub00/vhpl00 1390063883

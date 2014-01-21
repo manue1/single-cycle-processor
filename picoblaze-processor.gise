@@ -26,6 +26,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LogicUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LogicUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="LogicUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ShiftUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ShiftUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ShiftUnit.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 

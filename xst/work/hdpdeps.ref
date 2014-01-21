@@ -1,7 +1,14 @@
-V3 3
+V3 8
 FL //vboxsrv/github/picoblaze-processor/logic-unit.vhd 2014/01/18.17:51:20 P.28xd
 EN work/LogicUnit 1390063883 \
       FL //vboxsrv/github/picoblaze-processor/logic-unit.vhd \
       PB ieee/std_logic_1164 1341906176
 AR work/LogicUnit/Behavior 1390063884 \
       FL //vboxsrv/github/picoblaze-processor/logic-unit.vhd EN work/LogicUnit 1390063883
+FL "//vmware-host/shared folders/picoblaze-processor/shift-unit.vhd" 2014/01/18.12:01:50 P.28xd
+EN work/ShiftUnit 0 \
+      FL "//vmware-host/shared folders/picoblaze-processor/shift-unit.vhd" \
+      PB ieee/std_logic_1164 1341906176
+AR work/ShiftUnit/Behavior 0 \
+      FL "//vmware-host/shared folders/picoblaze-processor/shift-unit.vhd" \
+      EN work/ShiftUnit 0 CP Multiplexer_4_to_1 CP Multiplexer_2_to_1
