@@ -26,7 +26,7 @@ architecture Behavior of Full_Subtracter_2 is
 	signal q1: STD_LOGIC_VECTOR (7 downto 0);
 begin
 	-- Negation des Minuenden
-	ml <= not M after 2 ns;
+	m1 <= not M after 2 ns;
 	-- Voll-Addierer
 	ADD: Full_Adder_2 port map (A => m1, B => S, Q => q1, C8 => C8);
 	-- Negation des Ergebnisses

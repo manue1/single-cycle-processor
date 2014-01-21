@@ -19,13 +19,13 @@ end ArithmeticUnit;
 
 architecture Behavior of ArithmeticUnit is
 	-- Addierer
-	component Adder
+	component Full_Adder
 		generic (width: positive);
 		port (A, B: in STD_LOGIC_VECTOR (width - 1 downto 0);
 			  Ci: in STD_LOGIC;
 			  Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
 			  Co: out STD_LOGIC);
-	end component Adder;
+	end component Full_Adder;
 
 -- Eingangssignal des Addierers
 signal op1: STD_LOGIC_VECTOR (width - 1 downto 0);
@@ -54,7 +54,7 @@ begin
 	CI_MUX: Multiplexer_2_to_1 port map(A => '0', B => Ci, Y => cyi, S => Op(0));
 
 	-- Komponente zum Addieren
-	ADD: Adder
+	ADD: Full_Adder
 		generic map (width => width)
 		port map(A => op1, B => B, Ci => cyi, Q => result, Co => Co);
 
