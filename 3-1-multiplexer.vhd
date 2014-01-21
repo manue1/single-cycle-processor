@@ -1,21 +1,3 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-
-package mux_lib_3_1 is
-
-component Multiplexer is
-port (	-- Datenleitungen
-		A: in STD_LOGIC; -- Bingang 1
-		B: in STD_LOGIC; -- Eingang 2
-		C: in STD_LOGIC; -- Eingang 3
-		Q: out STD_LOGIC; --Ausgang
-		-- Steuerleitungen
-		S: in STD_LOGIC_VECTOR (1 downto 0));
-end component;
-
-end mux_lib_3_1;
-
--- End of 3-1 Multiplexer Library
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
