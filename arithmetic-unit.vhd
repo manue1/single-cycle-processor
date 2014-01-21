@@ -101,12 +101,13 @@ begin
 	
 	SUB: Full_Subtracter
 		generic map (width => width)
-		port map(M => op1, S => B, Ci => cyi, Q => result,)
+		port map(M => op1, S => B, Ci => cyi, Q => result, Co => Co);
 		
 	-- SUBCY Komponent
 	
 	SUBCY: Full_Subtracter_3
 		generic map (width => width)
+		port map(M => A, S => B, Q => result, Co => Co);
 
 	-- Umschaltung des Ergebnisses
 	process (Op, result)
