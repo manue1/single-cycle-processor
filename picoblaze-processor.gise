@@ -21,7 +21,22 @@
 
   <sourceproject xmlns="http://www.xilinx.com/XMLSchema" xil_pn:fileType="FILE_XISE" xil_pn:name="picoblaze-processor.xise"/>
 
-  <files xmlns="http://www.xilinx.com/XMLSchema"/>
+  <files xmlns="http://www.xilinx.com/XMLSchema">
+    <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ArithmeticUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ArithmeticUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ArithmeticUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Adder.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Adder.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Adder.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Adder_2.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Adder_2.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Adder_2.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Subtracter_2.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Subtracter_2.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Subtracter_2.xst"/>
+    <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
+  </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema"/>
 
