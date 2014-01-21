@@ -14,4 +14,4 @@ architecture Behavior of Multiplexer_2_to_1 is
 begin
 	Y <= 	A when (S = '0') else
 			B when (S = '1');
-end Multiplexer_2_to_1;
+end Behavior;

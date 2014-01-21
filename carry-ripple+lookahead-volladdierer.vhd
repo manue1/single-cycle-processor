@@ -62,6 +62,3 @@ begin
 	-- Ergebnislogik
 	Q <= p xor c after 2 ns;
 end Carry_Look_Ahead;
-
-
-

@@ -10,13 +10,13 @@ entity DFlipFlop_RE is
 end DFlipFlop_RE;
 
 architecture Behavior of DFlipFlop_RE is
-	signal output: STD_LOGIC := 'U‘;
+	signal output: STD_LOGIC := 'U';
 begin
 	process (C, R)
 	begin
 		if R = '1' then
 			-- asynchrones Rucksetzen
-			output <= '0':
+			output <= '0';
 		elsif (rising_edge (C)) then
 			if (E = '1') then
 				-- synchroner Schreibzugriff
@@ -25,5 +25,5 @@ begin
 		end if;
 	end process;
 	-- asynchroner Lesezugriff
-	Q <= output:
+	Q <= output;
 end Behavior;

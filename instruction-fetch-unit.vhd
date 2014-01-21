@@ -8,7 +8,7 @@ entity InstructionFetchUnit is
 			 	stack_addr_width: positive); -- Adressbreite des Call/return—Stapels
 	port (-- Datenleitungen
 	JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
-	Instruction: out STD_LOGIC_VECTOR (cmd_width — 1 downto 0); -- naechster Befehl
+	Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
 	-- Steuerleitungen
 	Clk: in STD_LOGIC; -- Takt
 	WriteEnable: in STD_LOGIC; -- Schreibfreigabe des Befehlszaehlers

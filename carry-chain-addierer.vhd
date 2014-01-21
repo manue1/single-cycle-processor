@@ -7,9 +7,9 @@ use UNISIM.VCOMPONENTS.ALL;
 entity Full_Adder_3 is
 	generic (width: integer:= 8);
 	port (	A: in STD_LOGIC_VECTOR (width - 1 downto 0);
-			B: in STD_LOGIC_VECTOR (width - 1 downto 0);
-			Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
-			Co: out STD_LOGIC);
+				B: in STD_LOGIC_VECTOR (width - 1 downto 0);
+				Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
+				Co: out STD_LOGIC);
 end Full_Adder_3;
 
 -- Komponentenbasiertes Verhalten

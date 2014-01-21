@@ -159,12 +159,12 @@ architecture Behavior of ControlUnit is
 	s_not_io_strobe <= not s_io_strobe;
 
 	CONTROL_DFF: DFlipFlop_A_RE port map (C => Clk, D => s_not_io_strobe, E => s_io_wait,
-										  R => s_not_io_wait, Q => s_io_strobe):
+										  R => s_not_io_wait, Q => s_io_strobe);
 	s_not_write <= s_io_wait xor s_io_strobe;
 	IOStrobe <= s_io_strobe;
 
 	-- Schreibfreigabe fuer den Befehlszaehler
-	PCWrite <= not s_not_write:
+	PCWrite <= not s_not_write;
 
 	-- Sprungadresse laden
 	LoadJumpAddress <= OpCode(4) and OpCode(3) and not OpCode(2) and s_condition_met;

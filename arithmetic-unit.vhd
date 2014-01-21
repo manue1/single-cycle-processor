@@ -6,15 +6,15 @@ entity ArithmeticUnit is
 	port (-- Datenleitungen
 		  A: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 1
 		  B: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 2
-		  Ci: in STD_LOGIC;								-- Uebertrag am Eingang
+		  Ci: in STD_LOGIC;										-- Uebertrag am Eingang
 		  Q: out STD_LOGIC_VECTOR (width - 1 downto 0);	-- Ergebnis
-		  Co: out STD_LOGIC;							-- Uebertrag
+		  Co: out STD_LOGIC;										-- Uebertrag
 		  -- Steuerleitungen
 		  Op: in STD_LOGIC_VECTOR (1 downto 0));		-- Bits 14 und 13 des Befehlskodes
-		  												-- 00 -> ADD
-		  												-- 01 -> ADDCY
-		  												-- 10 -> SUB, COMPARE
-		  												-- 11 -> SUBCY
+																	-- 00 -> ADD
+																	-- 01 -> ADDCY
+																	-- 10 -> SUB, COMPARE
+																	-- 11 -> SUBCY
 end ArithmeticUnit;
 
 architecture Behavior of ArithmeticUnit is

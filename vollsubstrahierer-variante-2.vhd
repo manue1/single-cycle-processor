@@ -1,5 +1,5 @@
 library IEEE;
-use IEEE .STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_1164.ALL;
 
 entity Full_Subtracter_2 is
 	port (	M: in STD_LOGIC_VECTOR (7 downto 0); -- Minuend
@@ -31,4 +31,5 @@ begin
 	ADD: Full_Adder_2 port map (A => m1, B => S, Q => q1, C8 => C8);
 	-- Negation des Ergebnisses
 	Q <= not q1 after 2 ns;
+
 end Behavior;
