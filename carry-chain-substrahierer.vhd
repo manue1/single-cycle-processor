@@ -1,25 +1,25 @@
 library IEEE;
-use IEEE .STD_LOGIC_11641.ALL;
+use IEEE.STD_LOGIC_1164.ALL;
 
 library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
 entity Full_Subtracter_3 is
 	generic (width: integer:= 8);
-	port (	M: in STD_LOGIC_VECTOR (width - 1 downto 0);
+	port (M: in STD_LOGIC_VECTOR (width - 1 downto 0);
 			S: in STD_LOGIC_VECTOR (width - 1 downto 0);
 			Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
 			Co: out STD_LOGIC);
 end Full_Subtracter_3;
 
 -- Komponentenbasiertes Verhalten
-architecture Behavior of Full_Substracter_3 is
+architecture Behavior of Full_Subtracter_3 is
 	--Carry-Multiplexer
 	component MUXCY
 		port (CI: in STD_ULOGIC;	-- CIN
-			  DI: in STD_ULOGIC;	-- Eingang von CY0
-			  S: in STD_ULOGIC;		-- Auswahl von CYSEL
-			  O: out STD_ULOGIC);	-- Ergebnis der Addition
+			   DI: in STD_ULOGIC;	-- Eingang von CY0
+			   S: in STD_ULOGIC;		-- Auswahl von CYSEL
+			   O: out STD_ULOGIC);	-- Ergebnis der Addition
 	end component;
 
 	-- interne Vektoren

@@ -3,7 +3,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 -- Voll-Subtrahierer
 entity Full_Subtracter is
-	port (	M: in STD_LOGIC; -- Minuend
+	port (M: in STD_LOGIC; -- Minuend
 			S: in STD_LOGIC; -- Subtrahend
 			Ci: in STD_LOGIC; -- Ubertrag am Eingang
 			Q: out STD_LOGIC; -- Ergebnis
