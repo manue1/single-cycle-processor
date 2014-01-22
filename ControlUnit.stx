@@ -1,0 +1,53 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to Z:/picoblaze-processor/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.09 secs
+ 
+--> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.14 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/2-1-multiplexer.vhd" in Library work.
+Entity <Multiplexer_2_to_1> compiled.
+Entity <Multiplexer_2_to_1> (Architecture <Behavior>) compiled.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/dff_re.vhd" in Library work.
+Entity <DFlipFlop_RE> compiled.
+Entity <DFlipFlop_RE> (Architecture <Behavior>) compiled.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/dff_a_s.vhd" in Library work.
+Entity <DFlipFlop_A_S> compiled.
+Entity <DFlipFlop_A_S> (Architecture <Behavior>) compiled.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/dff_a_r.vhd" in Library work.
+Entity <DFlipFlop_A_R> compiled.
+Entity <DFlipFlop_A_R> (Architecture <Behavior>) compiled.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/flag-register.vhd" in Library work.
+Entity <FlagRegister> compiled.
+Entity <FlagRegister> (Architecture <Behavior>) compiled.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/dff_a_re.vhd" in Library work.
+Entity <DFlipFlop_A_RE> compiled.
+Entity <DFlipFlop_A_RE> (Architecture <Behavior>) compiled.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/control-unit.vhd" in Library work.
+Entity <ControlUnit> compiled.
+Entity <ControlUnit> (Architecture <Behavior>) compiled.
+
+
+Total REAL time to Xst completion: 3.00 secs
+Total CPU time to Xst completion: 2.37 secs
+ 
+--> 
+
+Total memory usage is 210820 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
