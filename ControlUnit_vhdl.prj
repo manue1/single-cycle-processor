@@ -1,0 +1,7 @@
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\dff_re.vhd"
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\2-1-multiplexer.vhd"
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\flag-register.vhd"
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\dff_a_s.vhd"
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\dff_a_re.vhd"
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\dff_a_r.vhd"
+vhdl work "\\vmware-host\shared folders\picoblaze-processor\control-unit.vhd"
