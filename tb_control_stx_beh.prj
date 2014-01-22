@@ -1,8 +1,0 @@
-vhdl isim_temp "dff_re.vhd"
-vhdl isim_temp "2-1-multiplexer.vhd"
-vhdl isim_temp "flag-register.vhd"
-vhdl isim_temp "dff_a_s.vhd"
-vhdl isim_temp "dff_a_re.vhd"
-vhdl isim_temp "dff_a_r.vhd"
-vhdl isim_temp "control-unit.vhd"
-vhdl isim_temp "tb_control-unit.vhd"
