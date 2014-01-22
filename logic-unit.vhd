@@ -41,7 +41,4 @@ begin
 
 		Co <= c;
 	end process;
-end Behavior; 
-
-
-
+end Behavior;
