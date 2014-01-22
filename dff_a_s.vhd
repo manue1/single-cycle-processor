@@ -4,19 +4,19 @@
 library IEEE;
 USE IEEE.STD_LOGIC_1164.ALL;
 
-entity DFlipFlop_A_R is
+entity DFlipFlop_A_S is
 	port (	C: in STD_LOGIC; -- Takt
 				D: in STD_LOGIC; -- Dateneingang
-				R: in STD_LOGIC; -- Ruecksetzen
+				S: in STD_LOGIC; -- Setzen
 				Q: out STD_LOGIC); -- Datenausgang
-end DFlipFlop_A_R;
+end DFlipFlop_A_S;
 
-architecture Behavior of DFlipFlop_A_R is
+architecture Behavior of DFlipFlop_A_S is
 	begin
-    process (C, R)
+    process (C, S)
     begin
-        if R = '0' then
-            Q <= '0';
+        if S = '1' then
+            Q <= '1';
         elsif (rising_edge(C)) then
             Q <= D;
         end if;

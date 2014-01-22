@@ -57,7 +57,7 @@ begin
 	CE <= IntCode(0) or WE;
 	CF_DFF: DFlipFlop_RE port map (C => Clk, D => CFi, E => CE, R => Reset, Q => CFo);
 	CFS_DFF: DFlipFlop_RE
-		port map (C => Clk, D => CFo, E => IntCode(1), R => Reset, Q => CFShadoM);
+		port map (C => Clk, D => CFo, E => IntCode(1), R => Reset, Q => CFShadow);
 
 	Co <= CFo;
 
@@ -72,7 +72,7 @@ begin
 	Zo <= ZFo;
 
 	-- Eingangsmultiplexer des Interrupt-Enable-Flags
-	IEF_MUX: Multiplexer_2_to_1 port map (A => IEi, B => '0‘, Y => IEFi, S => IntCode(1));
+	IEF_MUX: Multiplexer_2_to_1 port map (A => IEi, B => '0', Y => IEFi, S => IntCode(1));
 
 	-- Speicher fur das Interrupt-Enable-Flag
 	IECE <= IntCode(1) or IEWE;
