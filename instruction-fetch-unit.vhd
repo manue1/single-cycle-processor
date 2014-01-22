@@ -4,8 +4,8 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity InstructionFetchUnit is
 	generic (	cmd_width: positive; -- Befehlsbreite
-			 	cmd_addr_width: positive); -- Adressbreite des Befehlsspeichers
-			 	--stack_addr_width: positive); -- Adressbreite des Call/return—Stapels
+					cmd_addr_width: positive); -- Adressbreite des Befehlsspeichers
+			 	--stack_addr_width: positive); -- Adressbreite des Call/return-Stapels
 	port (-- Datenleitungen
 	JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
 	Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
@@ -15,22 +15,22 @@ entity InstructionFetchUnit is
 	LoadStartAddress: in STD_LOGIC; -- Startadresse laden
 	LoadJumpAddress: in STD_LOGIC; -- Sprungadresse laden
 	RestoreCmdAddress: in STD_LOGIC); -- Laden einer Adresse vom Stack
-	--LoadInterruptAddress: in STD_LOGIC; -- Interrupt—Adresse laden
+	--LoadInterruptAddress: in STD_LOGIC; -- Interrupt-Adresse laden
 	-- SaveCmdAddress: in STD_LOGIC; -- Sichern der Befehlsadresse auf dem Stack
 end InstructionFetchUnit;
 
 architecture Behavior of InstructionFetchUnit is
-	-- Ein— und Ausgang des Befehlszaehlers
+	-- Ein- und Ausgang des Befehlszaehlers
 	signal s_addr_in: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
 	signal s_addr_out: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
-	-- Ein— und Ausgang des Addierers
+	-- Ein- und Ausgang des Addierers
 	signal s_addr_add_in: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
 	signal s_addr_add_out: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
 
 	-- Ausgangssignale des Stapelspeichers
 	-- signal s_stack_out: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
 
-	-- Call/Return—Stapel - nicht Bestandteil der Belegarbeit
+	-- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
 	-- component CallReturnStack
 	-- 	generic (addr_width: positive; -- Adressbreite
 	-- 			 data_width: positive); -- Datenbreite
@@ -54,7 +54,7 @@ architecture Behavior of InstructionFetchUnit is
 	end component P_ROM;
 
 begin
-	-- Adress—Multiplexer
+	-- Adress-Multiplexer
 	with RestoreCmdAddress select
 		s_addr_add_in <= s_addr_out when '0',
 						 s_stack_out when '1',

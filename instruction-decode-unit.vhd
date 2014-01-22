@@ -8,9 +8,9 @@ entity InstructionDecodeUnit is
 	port (-- Datenleitungen
 			Instruction: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Befehl
 			Address: out STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungziel
-			IEBit: out STD_LOGIC; -- Interrupt—Enable-Bit
-			Operandl: out STD_LOGIC_VECTOR (data_Hidth - 1 downto 0): -- 1. Operand
-			Operand2: out STD_LOGIC_VECTOR (data_pidth - 1 downto 0); -- 2. Operand
+			IEBit: out STD_LOGIC; -- Interrupt-Enable-Bit
+			Operand1: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- 1. Operand
+			Operand2: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- 2. Operand
 			Result: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Ergebnis der Verarbeitung
 		  -- Steuerleitungen
 			Clk: in STD_LOGIC; -- Takt fur Registersatz
@@ -18,7 +18,7 @@ entity InstructionDecodeUnit is
 			OpCode: out STD_LOGIC_VECTOR (4 downto 0); -- Kodierung des Befehls
 			ShiftCode: out STD_LOGIC_VECTOR (3 downto 0); -- Kodierung des Schiebe- und Rotationsbefehls
 			Condition: out STD_LOGIC_VECTOR (2 downto 0)); -- Sprungbedingung
-														   -- 000 => unbedingter Sprung
+															-- 000 => unbedingter Sprung
 														   -- 1XX => bedingter Sprung
 														   -- 100 => ZF = 1
 														   -- 101 => ZF = 0
@@ -53,7 +53,7 @@ architecture Behavior of InstructionDecodeUnit is
 end component RegisterFile;
 
 	-- 2. Registeroperand
-	signal s_operand_2: STD_LOGIC_VECTOR (data_width — 1 downto 0);
+	signal s_operand_2: STD_LOGIC_VECTOR (data_width - 1 downto 0);
 
 	begin
 		-- Befehlsdekoder
