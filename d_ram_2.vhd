@@ -15,7 +15,7 @@ end D_RAM_2;
 
 architecture Behavior of D_RAM_2 is
 	-- Typ des Speichers definieren
-	type RAM_TYPE is array (0 to (2**addr_width) — 1) of
+	type RAM_TYPE is array (0 to (2**addr_width) - 1) of
 							STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	-- Speicher als interne Komponente definieren und initialisieren
 	signal ram: RAM_TYPE:= (others => (others => '0'));

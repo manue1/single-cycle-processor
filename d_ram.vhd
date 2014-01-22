@@ -4,9 +4,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
 use UNISIM.VComponents.all;
 
--- Verteilter Speicher (16 Werte x 1 Bit — eine LUT)
+-- Verteilter Speicher (16 Werte x 1 Bit - eine LUT)
 entity D_RAM is
-	port (	Addr: in STD_LOGIC_VECTOR(3 downto O); -- Adresse im Speicher
+	port (Addr: in STD_LOGIC_VECTOR(3 downto 0); -- Adresse im Speicher
 			DI: in STD_LOGIC; -- zu schreibende Daten
 			DO: out STD_LOGIC; -- gelesene Daten
 			Clk: in STD_LOGIC; -- Schreibtakt

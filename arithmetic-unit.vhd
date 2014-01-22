@@ -39,10 +39,10 @@ architecture Behavior of ArithmeticUnit is
 	-- Substrahierer (SUB) und COMPARE
 	component Full_Subtracter
 		generic (width: positive);
-		port (M: in STD_LOGIC; -- Minuend
-				S: in STD_LOGIC; -- Subtrahend
+		port (M: in STD_LOGIC_VECTOR (width - 1 downto 0); -- Minuend
+				S: in STD_LOGIC_VECTOR (width - 1 downto 0); -- Subtrahend
 				Ci: in STD_LOGIC; -- Ubertrag am Eingang
-				Q: out STD_LOGIC; -- Ergebnis
+				Q: out STD_LOGIC_VECTOR (width - 1 downto 0); -- Ergebnis
 				Co: out STD_LOGIC); -- Ubertrag am Ausgang
 	end component;
 	

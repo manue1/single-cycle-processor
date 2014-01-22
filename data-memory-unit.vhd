@@ -3,9 +3,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity DataMemoryUnit is
-	generic (	addr_width: positive; -- Adressbreite
-				data_width: positive; -- Datenbreite
-	port (	Addr: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse
+	generic (addr_width: positive; -- Adressbreite
+				data_width: positive); -- Datenbreite
+	port (Addr: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse
 			DI: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Daceneingang
 			DO: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
 			Clk: in STD_LOGIC; -- Takt

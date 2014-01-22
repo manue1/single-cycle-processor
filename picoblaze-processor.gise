@@ -23,9 +23,54 @@
 
   <files xmlns="http://www.xilinx.com/XMLSchema">
     <file xil_pn:fileType="FILE_LSO" xil_pn:name=".lso"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name=".prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name=".stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name=".xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ArithmeticUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ArithmeticUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ArithmeticUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="B_RAM.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="B_RAM.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="B_RAM.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="B_RAM_2.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="B_RAM_2.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="B_RAM_2.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="B_RAM_3.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="B_RAM_3.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="B_RAM_3.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ControlUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ControlUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DFF_RS.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DFF_RS.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DFF_RS.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DFlipFlop_A_R.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DFlipFlop_A_R.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DFlipFlop_A_R.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DFlipFlop_A_RE.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DFlipFlop_A_RE.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DFlipFlop_A_RE.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DFlipFlop_A_S.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DFlipFlop_A_S.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DFlipFlop_A_S.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DFlipFlop_RE.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DFlipFlop_RE.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DFlipFlop_RE.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="D_RAM.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="D_RAM.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="D_RAM.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="D_RAM_2.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="D_RAM_2.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="D_RAM_2.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="D_ROM.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="D_ROM.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="D_ROM.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="DataMemoryUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="DataMemoryUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="DataMemoryUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="FlagRegister.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="FlagRegister.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="FlagRegister.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Adder.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Adder.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Adder.xst"/>
@@ -47,9 +92,15 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Full_Subtracter_3.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Full_Subtracter_3.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="Full_Subtracter_3.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HardwareAccessUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HardwareAccessUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="HardwareAccessUnit.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LogicUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LogicUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="LogicUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="Multiplexer_2_to_1.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="Multiplexer_2_to_1.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="Multiplexer_2_to_1.xst"/>
     <file xil_pn:fileType="FILE_DIRECTORY" xil_pn:name="xst"/>
   </files>
 

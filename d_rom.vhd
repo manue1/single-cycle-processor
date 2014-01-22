@@ -1,8 +1,11 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+
 library UNISIM;
 use UNISIM.VComponents.all;
 
 entity D_ROM is
-	port (	Addr: in STD_LOGIC_VECTOR(3 downto 0); -- Adresse im Speicher
+	port (Addr: in STD_LOGIC_VECTOR(3 downto 0); -- Adresse im Speicher
 			DO: out STD_LOGIC); -- gelesene Daten
 end D_ROM;
 
@@ -11,7 +14,7 @@ architecture Behavior of D_ROM is
 	component ROM16X1
 		generic (INIT: BIT_VECTOR(15 downto 0) := X"0000");
 		port (A0, A1, A2, A3: in STD_ULOGIC; -- Adresse im Speicher
-				O: out STD_ULOGIC); —— gelesene Daten
+				O: out STD_ULOGIC); -- gelesene Daten
 	end component;
 begin
 	-- Instanz des Speichers erstellen
