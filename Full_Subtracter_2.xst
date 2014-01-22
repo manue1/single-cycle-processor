@@ -1,0 +1,5 @@
+set -tmpdir "G:/picoblaze-processor/xst/projnav.tmp"
+set -xsthdpdir "G:/picoblaze-processor/xst"
+elaborate
+-ifn Full_Subtracter_2.prj
+-ifmt mixed

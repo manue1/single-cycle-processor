@@ -1,0 +1,3 @@
+vhdl work "dff_re.vhd"
+vhdl work "2-1-multiplexer.vhd"
+vhdl work "flag-register.vhd"

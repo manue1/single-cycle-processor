@@ -1,0 +1,54 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to G:/picoblaze-processor/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Parameter xsthdpdir set to G:/picoblaze-processor/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" in Library work.
+Entity <Full_Subtracter_3> compiled.
+ERROR:HDLParsers:3010 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 16. Entity Full_Substracter_3 does not exist.
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 19. Undefined symbol 'STD_ULOGIC'.
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 19. STD_ULOGIC: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 26. Undefined symbol 'STD_LOGIC_VECTOR'.
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 26. STD_LOGIC_VECTOR: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3313 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 26. Undefined symbol 'width'.  Should it be: with?
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 26. width: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 31. Undefined symbol 'p'.
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 31. Undefined symbol 'S'.
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 34. Undefined symbol 'c'.
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 34. c: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 38. Undefined symbol 'i'.
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 38. i: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 38. Undefined symbol 'M'.
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 38. M: Undefined symbol (last report in this block)
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 38. p: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 43. Undefined symbol 'XORCY'.
+ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 43. Undefined symbol 'Q'.
+ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 43. Q: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3313 - "//vboxsrv/github/picoblaze-processor/carry-chain-substrahierer.vhd" Line 47. Undefined symbol 'Co'.  Should it be: to or so?
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.36 secs
+ 
+--> 
+
+Total memory usage is 221400 kilobytes
+
+Number of errors   :   20 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

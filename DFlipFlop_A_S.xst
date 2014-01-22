@@ -1,0 +1,5 @@
+set -tmpdir "G:/picoblaze-processor/xst/projnav.tmp"
+set -xsthdpdir "G:/picoblaze-processor/xst"
+elaborate
+-ifn DFlipFlop_A_S.prj
+-ifmt mixed
