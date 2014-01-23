@@ -95,6 +95,12 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="HardwareAccessUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="HardwareAccessUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="HardwareAccessUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="InstructionDecodeUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="InstructionDecodeUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="InstructionDecodeUnit.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="InstructionFetchUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="InstructionFetchUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="InstructionFetchUnit.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="LogicUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="LogicUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="LogicUnit.xst"/>
@@ -223,8 +229,7 @@
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="fuse.log"/>
-      <outfile xil_pn:name="isim"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="tb_ControlUnit_beh.prj"/>
       <outfile xil_pn:name="tb_ControlUnit_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
@@ -235,7 +240,7 @@
       <status xil_pn:value="OutOfDateForPredecessor"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
-      <outfile xil_pn:name="isim.cmd"/>
+      <status xil_pn:value="OutputRemoved"/>
       <outfile xil_pn:name="tb_ControlUnit_isim_beh.wdb"/>
     </transform>
   </transforms>

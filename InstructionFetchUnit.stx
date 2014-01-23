@@ -1,39 +1,38 @@
 Release 14.2 - xst P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
---> Parameter TMPDIR set to G:/picoblaze-processor/xst/projnav.tmp
+--> Parameter TMPDIR set to Z:/picoblaze-processor/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
  
---> Parameter xsthdpdir set to G:/picoblaze-processor/xst
+--> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.14 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "//vboxsrv/github/picoblaze-processor/instruction-fetch-unit.vhd" in Library work.
+Compiling vhdl file "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" in Library work.
 Entity <instructionfetchunit> compiled.
-ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 60. Undefined symbol 's_stack_out'.
-ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 60. s_stack_out: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "//vboxsrv/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 76. Undefined symbol 'LoadInterruptAddress'.
-ERROR:HDLParsers:1209 - "//vboxsrv/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 76. LoadInterruptAddress: Undefined symbol (last report in this block)
-ERROR:HDLParsers:164 - "//vboxsrv/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 80. parse error, unexpected LT, expecting OPENPAR or TICK or LSQBRACK
+ERROR:HDLParsers:3312 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 60. Undefined symbol 's_stack_out'.
+ERROR:HDLParsers:1209 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 60. s_stack_out: Undefined symbol (last report in this block)
+ERROR:HDLParsers:3312 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 76. Undefined symbol 'LoadInterruptAddress'.
+ERROR:HDLParsers:1209 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 76. LoadInterruptAddress: Undefined symbol (last report in this block)
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.27 secs
+Total CPU time to Xst completion: 0.31 secs
  
 --> 
 
 Total memory usage is 212376 kilobytes
 
-Number of errors   :    5 (   0 filtered)
+Number of errors   :    4 (   0 filtered)
 Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
