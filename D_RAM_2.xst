@@ -1,5 +1,5 @@
-set -tmpdir "G:/picoblaze-processor/xst/projnav.tmp"
-set -xsthdpdir "G:/picoblaze-processor/xst"
+set -tmpdir "Z:/picoblaze-processor/xst/projnav.tmp"
+set -xsthdpdir "Z:/picoblaze-processor/xst"
 elaborate
 -ifn D_RAM_2.prj
 -ifmt mixed
