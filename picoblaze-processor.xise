@@ -153,6 +153,10 @@
       <association xil_pn:name="PostRouteSimulation" xil_pn:seqID="118"/>
       <association xil_pn:name="PostTranslateSimulation" xil_pn:seqID="118"/>
     </file>
+    <file xil_pn:name="p_rom.vhd" xil_pn:type="FILE_VHDL">
+      <association xil_pn:name="BehavioralSimulation" xil_pn:seqID="130"/>
+      <association xil_pn:name="Implementation" xil_pn:seqID="130"/>
+    </file>
   </files>
 
   <properties>
