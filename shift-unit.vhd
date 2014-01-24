@@ -52,7 +52,7 @@ begin
 	-- mittlere Bits des Operanden
 	G_MUX: for i in 1 to width - 2 generate
 		MID_MUX: Multiplexer_2_to_1
-			port map (A => A(i - 1), B => A(i 1), Y => Q(i), S => Dir);
+			port map (A => A(i - 1), B => A(i + 1), Y => Q(i), S => Dir);
 	end generate G_MUX; 
 
 	-- hochstwertigstes Bit des Operanden
