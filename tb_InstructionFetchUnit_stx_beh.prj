@@ -1,0 +1,3 @@
+vhdl isim_temp "p_rom.vhd"
+vhdl isim_temp "instruction-fetch-unit.vhd"
+vhdl isim_temp "tb_InstructionFetchUnit.vhd"
