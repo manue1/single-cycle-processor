@@ -7,17 +7,17 @@ entity InstructionFetchUnit is
 				cmd_addr_width: positive; -- Adressbreite des Befehlsspeichers
 				stack_addr_width: positive); -- Adressbreite des Call/return-Stapels
 	port (-- Datenleitungen
-	JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
-	Opcode: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Opcode eingang
-	Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
-	-- Steuerleitungen
-	Clk: in STD_LOGIC; -- Takt
-	WriteEnable: in STD_LOGIC; -- Schreibfreigabe des Befehlszaehlers
-	LoadStartAddress: in STD_LOGIC; -- Startadresse laden
-	LoadJumpAddress: in STD_LOGIC; -- Sprungadresse laden
-	RestoreCmdAddress: in STD_LOGIC; -- Laden einer Adresse vom Stack
-	LoadInterruptAddress: in STD_LOGIC; -- Interrupt-Adresse laden
-	SaveCmdAddress: in STD_LOGIC); -- Sichern der Befehlsadresse auf dem Stack
+			JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
+			Opcode: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Opcode eingang
+			Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
+			-- Steuerleitungen
+			Clk: in STD_LOGIC; -- Takt
+			WriteEnable: in STD_LOGIC; -- Schreibfreigabe des Befehlszaehlers
+			LoadStartAddress: in STD_LOGIC; -- Startadresse laden
+			LoadJumpAddress: in STD_LOGIC; -- Sprungadresse laden
+			RestoreCmdAddress: in STD_LOGIC; -- Laden einer Adresse vom Stack
+			LoadInterruptAddress: in STD_LOGIC; -- Interrupt-Adresse laden
+			SaveCmdAddress: in STD_LOGIC); -- Sichern der Befehlsadresse auf dem Stack
 end InstructionFetchUnit;
 
 architecture Behavior of InstructionFetchUnit is
