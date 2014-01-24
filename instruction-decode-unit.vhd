@@ -35,16 +35,16 @@ architecture Behavior of InstructionDecodeUnit is
 	-- Adressbreite des Registersatzes [Bit]
 	constant c_addr_width: positive := 4;
 
--- Adresse des ersten Registers
-signal s_addr_1: STD_LOGIC_VECTOR (3 downto 0);
--- Adresse des zweiten Registers
-signal s_addr_2: STD_LOGIC_VECTOR (3 downto 0);
--- Konstanter Wert
-signal s_const_value: STD_LOGIC_VECTOR (7 downto 0);
+	-- Adresse des ersten Registers
+	signal s_addr_1: STD_LOGIC_VECTOR (3 downto 0);
+	-- Adresse des zweiten Registers
+	signal s_addr_2: STD_LOGIC_VECTOR (3 downto 0);
+	-- Konstanter Wert
+	signal s_const_value: STD_LOGIC_VECTOR (7 downto 0);
 	
 	-- interne Register
 	component D_RAM_2		-- RegisterFile
-		generic (addr_width: positive; -- Adressbreite
+		generic (	addr_width: positive; -- Adressbreite
 					data_width: positive); -- Datenbreite
 		port (-- Datenleitungen
 				Address1: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse des 1. Leseports

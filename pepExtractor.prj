@@ -1,2 +1,2 @@
-work	"instruction-fetch-unit.vhd"
-work	"p_rom.vhd"
+work	"d_ram_2.vhd"
+work	"instruction-decode-unit.vhd"
