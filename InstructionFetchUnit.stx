@@ -4,37 +4,34 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total CPU time to Xst completion: 0.40 secs
  
 --> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total CPU time to Xst completion: 0.42 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-WARNING:HDLParsers:3607 - Unit work/B_RAM_3 is now defined in a different file.  It was defined in "//vboxsrv/github/picoblaze-processor/b_ram_3.vhd", and is now defined in "//vboxsvr/github/picoblaze-processor/b_ram_3.vhd".
-WARNING:HDLParsers:3607 - Unit work/B_RAM_3/WriteFirst is now defined in a different file.  It was defined in "//vboxsrv/github/picoblaze-processor/b_ram_3.vhd", and is now defined in "//vboxsvr/github/picoblaze-processor/b_ram_3.vhd".
-Compiling vhdl file "//vboxsvr/github/picoblaze-processor/b_ram_3.vhd" in Library work.
-Architecture writefirst of Entity b_ram_3 is up to date.
-Compiling vhdl file "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" in Library work.
-WARNING:HDLParsers:3530 - Time stamp of file "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" is newer than current system time.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/p_rom.vhd" in Library work.
+Architecture low_level_definition of Entity p_rom is up to date.
+Compiling vhdl file "//vmware-host/shared folders/picoblaze-processor/instruction-fetch-unit.vhd" in Library work.
 Entity <instructionfetchunit> compiled.
-Entity <instructionfetchunit> (Architecture <behavior>) compiled.
+Entity <InstructionFetchUnit> (Architecture <Behavior>) compiled.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.68 secs
+Total CPU time to Xst completion: 1.03 secs
  
 --> 
 
-Total memory usage is 212440 kilobytes
+Total memory usage is 220100 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

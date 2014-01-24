@@ -73,7 +73,7 @@ begin
 		if falling_edge (Clk) then
 			if LoadStartAddress = '1' then
 			   s_addr_out <= (others => '0');
-		elsif LoadInterruptAddress - '1' then
+		elsif LoadInterruptAddress = '1' then
 			  s_addr_out <= (others => '1');
 		else
 			if WriteEnable = '1' then

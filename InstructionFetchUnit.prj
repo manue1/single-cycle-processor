@@ -1,2 +1,2 @@
-vhdl work "b_ram_3.vhd"
+vhdl work "p_rom.vhd"
 vhdl work "instruction-fetch-unit.vhd"
