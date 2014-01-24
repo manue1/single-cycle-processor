@@ -4,35 +4,37 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+WARNING:HDLParsers:3607 - Unit work/B_RAM_3 is now defined in a different file.  It was defined in "//vboxsrv/github/picoblaze-processor/b_ram_3.vhd", and is now defined in "//vboxsvr/github/picoblaze-processor/b_ram_3.vhd".
+WARNING:HDLParsers:3607 - Unit work/B_RAM_3/WriteFirst is now defined in a different file.  It was defined in "//vboxsrv/github/picoblaze-processor/b_ram_3.vhd", and is now defined in "//vboxsvr/github/picoblaze-processor/b_ram_3.vhd".
+Compiling vhdl file "//vboxsvr/github/picoblaze-processor/b_ram_3.vhd" in Library work.
+Architecture writefirst of Entity b_ram_3 is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" in Library work.
+WARNING:HDLParsers:3530 - Time stamp of file "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" is newer than current system time.
 Entity <instructionfetchunit> compiled.
-ERROR:HDLParsers:3312 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 60. Undefined symbol 's_stack_out'.
-ERROR:HDLParsers:1209 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 60. s_stack_out: Undefined symbol (last report in this block)
-ERROR:HDLParsers:3312 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 76. Undefined symbol 'LoadInterruptAddress'.
-ERROR:HDLParsers:1209 - "//vboxsvr/github/picoblaze-processor/instruction-fetch-unit.vhd" Line 76. LoadInterruptAddress: Undefined symbol (last report in this block)
+Entity <instructionfetchunit> (Architecture <behavior>) compiled.
 
 
 Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.31 secs
+Total CPU time to Xst completion: 0.68 secs
  
 --> 
 
-Total memory usage is 212376 kilobytes
+Total memory usage is 212440 kilobytes
 
-Number of errors   :    4 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    4 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
