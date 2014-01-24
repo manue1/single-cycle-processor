@@ -1,3 +1,5 @@
+-- -> Alles hier kommt direkt in den Processor!
+
 -- Ergebnis der Verarbeitung
 signal computation_result: STD_LOGIC_VECTOR (data_width - 1 downto 0);
 -- Ergebnis des Speicherzugriffes
@@ -25,7 +27,7 @@ signal result: STD_LOGIC_VECTOR (data_width - 1 downto 0);
 
 -- Multiplexer fur den Datenpfad
 d_mux_control_1 <= instruction(cmd_width - 5);
-d_mux_control_2 <= instruction(cmd_width - 2) and
+d_mux_control_2 <= instruction(cmd_width - 2) or
 					not instruction(cmd_width - 4);
 d_mux_control_3 <= instruction(cmd_width - 1) xor
 					(instruction(cmd_width - 2) or instruction(cmd_width - 3));
