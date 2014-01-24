@@ -1,3 +1,0 @@
-vhdl work "p_rom.vhd"
-vhdl work "instruction-fetch-unit.vhd"
-vhdl work "tb_InstructionFetchUnit.vhd"

@@ -2,9 +2,14 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity InstructionDecodeUnit is
-	generic (cmd_addr_width: positive; -- Adressbreite des Befehlsspeichers
-				cmd_width: positive; -- Befehlsbreite (> 17)
-				data_width: positive); -- Datenbreite
+	-- for Unit simulation - test bench
+	generic (cmd_addr_width: integer := 10; -- Adressbreite des Befehlsspeichers
+				cmd_width: integer := 18; -- Befehlsbreite (> 17)
+				data_width: integer := 8); -- Datenbreite
+	-- for Processor implementation
+	-- generic (cmd_addr_width: positive; -- Adressbreite des Befehlsspeichers
+	-- 			cmd_width: positive; -- Befehlsbreite (> 17)
+	-- 			data_width: positive); -- Datenbreite
 	port (-- Datenleitungen
 			Instruction: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Befehl
 			Address: out STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungziel
@@ -30,16 +35,16 @@ architecture Behavior of InstructionDecodeUnit is
 	-- Adressbreite des Registersatzes [Bit]
 	constant c_addr_width: positive := 4;
 
--- Adresse des ersten Registers
-signal s_addr_1: STD_LOGIC_VECTOR (3 downto 0);
--- Adresse des zweiten Registers
-signal s_addr_2: STD_LOGIC_VECTOR (3 downto 0);
--- Konstanter Wert
-signal s_const_value: STD_LOGIC_VECTOR (7 downto 0);
+	-- Adresse des ersten Registers
+	signal s_addr_1: STD_LOGIC_VECTOR (3 downto 0);
+	-- Adresse des zweiten Registers
+	signal s_addr_2: STD_LOGIC_VECTOR (3 downto 0);
+	-- Konstanter Wert
+	signal s_const_value: STD_LOGIC_VECTOR (7 downto 0);
 	
 	-- interne Register
 	component D_RAM_2		-- RegisterFile
-		generic (addr_width: positive; -- Adressbreite
+		generic (	addr_width: positive; -- Adressbreite
 					data_width: positive); -- Datenbreite
 		port (-- Datenleitungen
 				Address1: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse des 1. Leseports
