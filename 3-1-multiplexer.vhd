@@ -4,7 +4,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity Multiplexer is
 port (	-- Datenleitungen
-		A: in STD_LOGIC; -- Bingang 1
+		A: in STD_LOGIC; -- Eingang 1
 		B: in STD_LOGIC; -- Eingang 2
 		C: in STD_LOGIC; -- Eingang 3
 		Q: out STD_LOGIC; --Ausgang
