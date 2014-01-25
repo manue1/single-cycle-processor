@@ -3,9 +3,9 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity D_RAM_2 is
-	generic (	addr_width: positive; -- Adressbreite
+	generic (addr_width: positive; -- Adressbreite
 				data_width: positive); -- Datenbreite
-	port (	Address1: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse des 1. Leseports
+	port (Address1: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse des 1. Leseports
 			Address2: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse des 2. Leseports
 			DataIn: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Dateneingang
 			DataOut1: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang des 1. Leseports
