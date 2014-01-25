@@ -46,8 +46,8 @@ Entity <calculationunit> compiled.
 Entity <calculationunit> (Architecture <behavioral>) compiled.
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.17 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 1.19 secs
  
 --> 
 

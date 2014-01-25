@@ -10,6 +10,7 @@ entity CalculationUnit is
 		  Ci: in STD_LOGIC;										-- Uebertrag am Eingang
 		  Q: out STD_LOGIC_VECTOR (width - 1 downto 0);	-- Ergebnis
 		  Co: out STD_LOGIC;										-- Uebertrag
+		  Zo: out STD_LOGIC;										-- Zero flag
 		  -- Steuerleitungen
 		  Opcode: in STD_LOGIC_VECTOR (4 downto 0);		-- This information is received from instruction decode unit
 																	
@@ -116,22 +117,34 @@ signal Q_Shift: STD_LOGIC_VECTOR (width - 1 downto 0);
 
 -- Result array
 signal result: STD_LOGIC_VECTOR (width - 1 downto 0);
+signal zero_flag: STD_LOGIC;
 
 begin
 	-- Umschaltung der Opcode fuer Multiplexer
-	process (Opcode)
-		begin
-			if (Opcode(4) = '1') then
-				opcode_mux <= "10";
-			elsif (Opcode(3) = '0') then
-				opcode_mux <= "01";
-			elsif (Opcode(2) = '1') then
-				opcode_mux <= "00";
-			elsif (Opcode(1) = '0') then
-				opcode_mux <= "00";
-			else opcode_mux <= "01";
-			end if;
-		end process;
+OP_FILTER: process (Opcode)
+				begin
+					if (Opcode(4) = '1') then
+						opcode_mux <= "10";
+					elsif (Opcode(3) = '0') then
+						opcode_mux <= "01";
+					elsif (Opcode(2) = '1') then
+						opcode_mux <= "00";
+					elsif (Opcode(1) = '0') then
+						opcode_mux <= "00";
+					else opcode_mux <= "01";
+					end if;
+				end process OP_FILTER;
+			
+	-- Bildung des Zero-Flags
+CAL_ZERO: process (result)
+				begin
+					zero_flag <= '0';
+					for i in result'RANGE loop
+						zero_flag <= zero_flag or result(i);
+					end loop;
+					Zo <= not zero_flag;
+			 end process CAL_ZERO;
+					
 
 Arithmetic_Unit: ArithmeticUnit
 	generic map (width => width)

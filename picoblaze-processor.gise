@@ -26,6 +26,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name=".prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name=".stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name=".xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ArithmeticLogicUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ArithmeticLogicUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="ArithmeticLogicUnit.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ArithmeticUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ArithmeticUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ArithmeticUnit.xst"/>
@@ -38,6 +41,9 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="B_RAM_3.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="B_RAM_3.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="B_RAM_3.xst"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CalculationUnit.prj"/>
+    <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="CalculationUnit.stx"/>
+    <file xil_pn:fileType="FILE_XST" xil_pn:name="CalculationUnit.xst"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ControlUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ControlUnit.xst"/>
@@ -132,6 +138,7 @@
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForInputs"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
+      <status xil_pn:value="InputAdded"/>
       <status xil_pn:value="InputChanged"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="1-3-demultiplexer.vhd"/>
@@ -185,6 +192,7 @@
     <transform xil_pn:end_ts="1390397410" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="7833393658578722210" xil_pn:start_ts="1390397410">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
+      <status xil_pn:value="OutOfDateForProperties"/>
     </transform>
     <transform xil_pn:end_ts="1390559503" xil_pn:in_ck="-4561042246324267930" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1390559503">
       <status xil_pn:value="SuccessfullyRun"/>
