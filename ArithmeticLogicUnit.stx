@@ -1,0 +1,36 @@
+Release 14.2 - xst P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to Z:/picoblaze-processor/xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.14 secs
+ 
+--> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "//vboxsvr/github/picoblaze-processor/ArithmeticLogicUnit.vhd" in Library work.
+Entity <arithmeticlogicunit> compiled.
+ERROR:HDLParsers:851 - "//vboxsvr/github/picoblaze-processor/ArithmeticLogicUnit.vhd" Line 90. Formal A of CalculationUnit with no default value must be associated with an actual value.
+ERROR:HDLParsers:164 - "//vboxsvr/github/picoblaze-processor/ArithmeticLogicUnit.vhd" Line 92. parse error, unexpected PORT
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.30 secs
+ 
+--> 
+
+Total memory usage is 212056 kilobytes
+
+Number of errors   :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+
