@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity LogicUnit is
-	generic (width: positive);
+	generic (width: integer := 8);
 	port (-- Datenleitungen
 			A: in STD_LOGIC_VECTOR (width - 1 downto 0); -- Operand 1
 			B: in STD_LOGIC_VECTOR (width - 1 downto 0); -- Operand 2
@@ -20,22 +20,23 @@ end LogicUnit;
 
 architecture Behavior of LogicUnit is
 	signal result: STD_LOGIC_VECTOR (width - 1 downto 0);
+	signal c: STD_LOGIC;	-- c = 0 bei logischen Operationen 
 begin
 	-- Logische Operationen
 	with Op select
-		result <= 	(A and B) when "01",
-					(A or B) when "10",
-					(A xor B) when "11",
-					(others => 'X') when others; 
+		result <= (A and B) when "01",
+					 (A or B) when "10",
+					 (A xor B) when "11",
+					 (others => 'X') when others; 
 	Q <= result;
-
+	
 	-- Erzeugung des Ubertrages
 	process (Test, result)
-		variable c: STD_LOGIC:= '0';	-- c = 0 bei logischen Operationen 
 	begin
+	c <= '0';
 		if (Test = '0') then
 			for i in result'RANGE loop
-				c := c xor result(i);			-- c = 1 bet ungerader Eins-ParitAt 
+				c <= c xor result(i);			-- c = 1 bet ungerader Eins-Paritaet 
 			end loop;
 		end if; 
 

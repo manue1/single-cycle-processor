@@ -5,7 +5,7 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
 entity Full_Adder_3 is
-	generic (width: integer:= 8);
+	generic (width: integer := 8);
 	port (	A: in STD_LOGIC_VECTOR (width - 1 downto 0);
 				B: in STD_LOGIC_VECTOR (width - 1 downto 0);
 				Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
