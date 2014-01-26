@@ -72,7 +72,6 @@ P_A: process
 		wait for 16ns;
 		A <= "01001010";
 		wait for 16ns;
-		wait for 16ns;
 		A <= "00100101";
 		wait for 16ns;
 		A <= "01001011";

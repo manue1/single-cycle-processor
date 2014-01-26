@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.16 secs
+Total CPU time to Xst completion: 0.13 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
@@ -19,20 +19,15 @@ Total CPU time to Xst completion: 0.16 secs
 =========================================================================
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/2-1-multiplexer.vhd" in Library work.
 Architecture behavior of Entity multiplexer_2_to_1 is up to date.
-Compiling vhdl file "//vboxsvr/github/picoblaze-processor/volladdierer.vhd" in Library work.
-Architecture logic_adder of Entity full_adder is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/carry-chain-addierer.vhd" in Library work.
 Architecture behavior of Entity full_adder_3 is up to date.
-Compiling vhdl file "//vboxsvr/github/picoblaze-processor/vollsubstrahierer.vhd" in Library work.
-Architecture logic_subtracter of Entity full_subtracter is up to date.
-Compiling vhdl file "//vboxsvr/github/picoblaze-processor/carry-chain-substrahierer.vhd" in Library work.
-Architecture behavior of Entity full_subtracter_3 is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/arithmetic-unit.vhd" in Library work.
-Architecture behavior of Entity arithmeticunit is up to date.
+Entity <arithmeticunit> compiled.
+Entity <arithmeticunit> (Architecture <behavior>) compiled.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.86 secs
+Total CPU time to Xst completion: 0.55 secs
  
 --> 
 

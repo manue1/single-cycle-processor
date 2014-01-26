@@ -2,12 +2,12 @@ Command line:
    tb_logic_unit_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  49251
+     -socket  49226
 
-Sun Jan 26 17:38:18 2014
+Sun Jan 26 22:24:20 2014
 
 
- Elaboration Time: 0.0625 sec
+ Elaboration Time: 0.078125 sec
 
  Current Memory Usage: 506.634 Meg
 
@@ -16,13 +16,13 @@ Sun Jan 26 17:38:18 2014
  Total Signal Drivers   : 8
  Total Blocks           : 3
  Total Primitive Blocks : 2
- Total Processes        : 7
+ Total Processes        : 8
  Total Traceable Variables  : 9
  Total Scalar Nets and Variables : 398
 
- Total Simulation Time: 0.0625 sec
+ Total Simulation Time: 0.109375 sec
 
  Current Memory Usage: 506.634 Meg
 
-Sun Jan 26 17:49:20 2014
+Sun Jan 26 22:25:05 2014
 

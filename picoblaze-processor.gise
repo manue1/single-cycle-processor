@@ -32,6 +32,7 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ArithmeticUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ArithmeticUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ArithmeticUnit.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="ArithmeticUnit_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ArithmeticUnit_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="B_RAM.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="B_RAM.stx"/>
@@ -45,6 +46,8 @@
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CalculationUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="CalculationUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="CalculationUnit.xst"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="CalculationUnit_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="CalculationUnit_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="ControlUnit.prj"/>
     <file xil_pn:fileType="FILE_XST_STX" xil_pn:name="ControlUnit.stx"/>
     <file xil_pn:fileType="FILE_XST" xil_pn:name="ControlUnit.xst"/>
@@ -134,6 +137,12 @@
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_InstructionFetchUnit_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_InstructionFetchUnit_isim_beh.wdb"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_InstructionFetchUnit_stx_beh.prj"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_alu_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_alu_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_ISIM_MISC" xil_pn:name="tb_alu_isim_beh.wdb"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_alu_stx_beh.prj"/>
+    <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_arithmetic_unit_isim_beh.exe"/>
+    <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_arithmetic_unit_stx_beh.prj"/>
     <file xil_pn:branch="BehavioralSim" xil_pn:fileType="FILE_ISIM_EXE" xil_pn:name="tb_arithmeticunit_isim_beh.exe"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_arithmeticunit_stx_beh.prj"/>
     <file xil_pn:fileType="FILE_XST_PROJECT" xil_pn:name="tb_calculation_unit_beh.prj"/>
@@ -159,59 +168,11 @@
   </files>
 
   <transforms xmlns="http://www.xilinx.com/XMLSchema">
-    <transform xil_pn:end_ts="1390696132" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1390696132">
+    <transform xil_pn:end_ts="1390769496" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1390769496">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1390755332" xil_pn:in_ck="-293192927952727016" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1390755332">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-      <outfile xil_pn:name="2-1-multiplexer.vhd"/>
-      <outfile xil_pn:name="3-1-multiplexer.vhd"/>
-      <outfile xil_pn:name="4-1-multiplexer.vhd"/>
-      <outfile xil_pn:name="ArithmeticLogicUnit.vhd"/>
-      <outfile xil_pn:name="CalculationUnit.vhd"/>
-      <outfile xil_pn:name="arithmetic-unit.vhd"/>
-      <outfile xil_pn:name="carry-chain-addierer.vhd"/>
-      <outfile xil_pn:name="control-unit.vhd"/>
-      <outfile xil_pn:name="d_ram_2.vhd"/>
-      <outfile xil_pn:name="data-memory-unit.vhd"/>
-      <outfile xil_pn:name="dff_a_r.vhd"/>
-      <outfile xil_pn:name="dff_a_re.vhd"/>
-      <outfile xil_pn:name="dff_a_s.vhd"/>
-      <outfile xil_pn:name="dff_re.vhd"/>
-      <outfile xil_pn:name="flag-register.vhd"/>
-      <outfile xil_pn:name="hardware-access-unit.vhd"/>
-      <outfile xil_pn:name="instruction-decode-unit.vhd"/>
-      <outfile xil_pn:name="instruction-fetch-unit.vhd"/>
-      <outfile xil_pn:name="logic-unit.vhd"/>
-      <outfile xil_pn:name="p_rom.vhd"/>
-      <outfile xil_pn:name="shift-unit.vhd"/>
-      <outfile xil_pn:name="tb_ControlUnit.vhd"/>
-      <outfile xil_pn:name="tb_InstructionDecodeUnit.vhd"/>
-      <outfile xil_pn:name="tb_InstructionFetchUnit.vhd"/>
-      <outfile xil_pn:name="tb_arithmeticunit.vhd"/>
-      <outfile xil_pn:name="tb_calculation_unit.vhd"/>
-      <outfile xil_pn:name="tb_flag_register.vhd"/>
-      <outfile xil_pn:name="tb_full_adder_3.vhd"/>
-      <outfile xil_pn:name="tb_hardware_access_unit.vhd"/>
-      <outfile xil_pn:name="tb_logic_unit.vhd"/>
-      <outfile xil_pn:name="tb_shift_unit.vhd"/>
-      <outfile xil_pn:name="volladdierer.vhd"/>
-    </transform>
-    <transform xil_pn:end_ts="1390754948" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="1690641829407492057" xil_pn:start_ts="1390754948">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1390754948" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="4149889757110577857" xil_pn:start_ts="1390754948">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1390696132" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-7700468023570841411" xil_pn:start_ts="1390696132">
-      <status xil_pn:value="SuccessfullyRun"/>
-      <status xil_pn:value="ReadyToRun"/>
-    </transform>
-    <transform xil_pn:end_ts="1390755332" xil_pn:in_ck="-293192927952727016" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1390755332">
+    <transform xil_pn:end_ts="1390774267" xil_pn:in_ck="-5618047504756813678" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1390774267">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="2-1-multiplexer.vhd"/>
@@ -238,6 +199,7 @@
       <outfile xil_pn:name="tb_ControlUnit.vhd"/>
       <outfile xil_pn:name="tb_InstructionDecodeUnit.vhd"/>
       <outfile xil_pn:name="tb_InstructionFetchUnit.vhd"/>
+      <outfile xil_pn:name="tb_alu.vhd"/>
       <outfile xil_pn:name="tb_arithmeticunit.vhd"/>
       <outfile xil_pn:name="tb_calculation_unit.vhd"/>
       <outfile xil_pn:name="tb_flag_register.vhd"/>
@@ -245,9 +207,56 @@
       <outfile xil_pn:name="tb_hardware_access_unit.vhd"/>
       <outfile xil_pn:name="tb_logic_unit.vhd"/>
       <outfile xil_pn:name="tb_shift_unit.vhd"/>
-      <outfile xil_pn:name="volladdierer.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1390755340" xil_pn:in_ck="-293192927952727016" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="7162012787176864912" xil_pn:start_ts="1390755332">
+    <transform xil_pn:end_ts="1390772721" xil_pn:name="TRAN_xawsToSimhdl" xil_pn:prop_ck="-4743488713544906643" xil_pn:start_ts="1390772721">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1390772721" xil_pn:name="TRAN_schematicsToHdlSim" xil_pn:prop_ck="-419814416583766571" xil_pn:start_ts="1390772721">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1390769497" xil_pn:name="TRAN_regenerateCoresSim" xil_pn:prop_ck="-7700468023570841411" xil_pn:start_ts="1390769497">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+    </transform>
+    <transform xil_pn:end_ts="1390774272" xil_pn:in_ck="-5618047504756813678" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1390774272">
+      <status xil_pn:value="SuccessfullyRun"/>
+      <status xil_pn:value="ReadyToRun"/>
+      <outfile xil_pn:name="2-1-multiplexer.vhd"/>
+      <outfile xil_pn:name="3-1-multiplexer.vhd"/>
+      <outfile xil_pn:name="4-1-multiplexer.vhd"/>
+      <outfile xil_pn:name="ArithmeticLogicUnit.vhd"/>
+      <outfile xil_pn:name="CalculationUnit.vhd"/>
+      <outfile xil_pn:name="arithmetic-unit.vhd"/>
+      <outfile xil_pn:name="carry-chain-addierer.vhd"/>
+      <outfile xil_pn:name="control-unit.vhd"/>
+      <outfile xil_pn:name="d_ram_2.vhd"/>
+      <outfile xil_pn:name="data-memory-unit.vhd"/>
+      <outfile xil_pn:name="dff_a_r.vhd"/>
+      <outfile xil_pn:name="dff_a_re.vhd"/>
+      <outfile xil_pn:name="dff_a_s.vhd"/>
+      <outfile xil_pn:name="dff_re.vhd"/>
+      <outfile xil_pn:name="flag-register.vhd"/>
+      <outfile xil_pn:name="hardware-access-unit.vhd"/>
+      <outfile xil_pn:name="instruction-decode-unit.vhd"/>
+      <outfile xil_pn:name="instruction-fetch-unit.vhd"/>
+      <outfile xil_pn:name="logic-unit.vhd"/>
+      <outfile xil_pn:name="p_rom.vhd"/>
+      <outfile xil_pn:name="shift-unit.vhd"/>
+      <outfile xil_pn:name="tb_ControlUnit.vhd"/>
+      <outfile xil_pn:name="tb_InstructionDecodeUnit.vhd"/>
+      <outfile xil_pn:name="tb_InstructionFetchUnit.vhd"/>
+      <outfile xil_pn:name="tb_alu.vhd"/>
+      <outfile xil_pn:name="tb_arithmeticunit.vhd"/>
+      <outfile xil_pn:name="tb_calculation_unit.vhd"/>
+      <outfile xil_pn:name="tb_flag_register.vhd"/>
+      <outfile xil_pn:name="tb_full_adder_3.vhd"/>
+      <outfile xil_pn:name="tb_hardware_access_unit.vhd"/>
+      <outfile xil_pn:name="tb_logic_unit.vhd"/>
+      <outfile xil_pn:name="tb_shift_unit.vhd"/>
+    </transform>
+    <transform xil_pn:end_ts="1390774280" xil_pn:in_ck="-5618047504756813678" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-5120420599826821608" xil_pn:start_ts="1390774272">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
@@ -255,18 +264,18 @@
       <outfile xil_pn:name="fuse.log"/>
       <outfile xil_pn:name="isim"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="tb_calculation_unit_beh.prj"/>
-      <outfile xil_pn:name="tb_calculation_unit_isim_beh.exe"/>
+      <outfile xil_pn:name="tb_alu_beh.prj"/>
+      <outfile xil_pn:name="tb_alu_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1390755341" xil_pn:in_ck="-5570496984902587654" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-6813092517338507747" xil_pn:start_ts="1390755340">
+    <transform xil_pn:end_ts="1390774280" xil_pn:in_ck="-6608449649052555150" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-3837086331102924091" xil_pn:start_ts="1390774280">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <status xil_pn:value="OutOfDateForOutputs"/>
       <status xil_pn:value="OutputChanged"/>
       <outfile xil_pn:name="isim.cmd"/>
       <outfile xil_pn:name="isim.log"/>
-      <outfile xil_pn:name="tb_calculation_unit_isim_beh.wdb"/>
+      <outfile xil_pn:name="tb_alu_isim_beh.wdb"/>
     </transform>
   </transforms>
 

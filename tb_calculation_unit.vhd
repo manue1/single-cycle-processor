@@ -59,43 +59,44 @@ BEGIN
 
 -- Testen von Shift Unit unter Calculation Unit
 
-P_A: process
-	begin
-		A <= "10100101";
-		wait for 16ns;
-		A <= "01001010";
-		wait for 16ns;
-		A <= "10100101";
-		wait for 16ns;
-		A <= "01001011";
-		wait for 16ns;
-		A <= "00100101";
-		wait for 16ns;
-		A <= "01001011";
-		wait for 16ns;
-		A <= "10100101";
-		wait for 16ns;
-		A <= "01001010";
-		wait for 16ns;
-		wait for 16ns;
-		A <= "00100101";
-		wait for 16ns;
-		A <= "01001011";
-		wait for 16ns;
-	end process;
-	
-B <= "UUUUUUUU";
-
-Opcode <= "10000";
-Ci <= '0', '1' after 16ns, '0' after 32ns, '1' after 48ns, '0' after 80ns, '1' after 96ns, '0' after 128ns;
-ShiftCode <= "000U",
-				 "100U" after 16ns,
-				 "001U" after 32ns,
-				 "101U" after 48ns,
-				 "010U" after 64ns,
-				 "110U" after 80ns,
-				 "0110" after 96ns,
-				 "1111" after 128ns;
+--P_A: process
+--	begin
+--		A <= "10100101";
+--		wait for 16ns;
+--		A <= "01001010";
+--		wait for 16ns;
+--		A <= "10100101";
+--		wait for 16ns;
+--		A <= "01001011";
+--		wait for 16ns;
+--		A <= "00100101";
+--		wait for 16ns;
+--		A <= "01001011";
+--		wait for 16ns;
+--		A <= "10100101";
+--		wait for 16ns;
+--		A <= "01001010";
+--		wait for 16ns;
+--		A <= "00100101";
+--		wait for 16ns;
+--		A <= "01001011";
+--		wait for 16ns;
+--	end process;
+--	
+--B <= "UUUUUUUU";
+--
+--Opcode <= "10000";
+--Ci <= '0', '1' after 16ns, '0' after 32ns, '1' after 48ns, '0' after 80ns, '1' after 96ns, '0' after 128ns;
+--ShiftCode <= "000U",
+--				 "100U" after 16ns,
+--				 "001U" after 32ns,
+--				 "101U" after 48ns,
+--				 "010U" after 64ns,
+--				 "110U" after 80ns,
+--				 "0110" after 96ns,
+--				 "1110" after 112ns,
+--				 "0111" after 128ns,
+--				 "1111" after 144ns;
 
 -- Testen von Logic Unit unter Calculation Unit
 

@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to Z:/picoblaze-processor/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.21 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
@@ -21,8 +21,8 @@ Compiling vhdl file "//vboxsvr/github/picoblaze-processor/4-1-multiplexer.vhd" i
 Architecture behavior of Entity multiplexer_4_to_1 is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/2-1-multiplexer.vhd" in Library work.
 Architecture behavior of Entity multiplexer_2_to_1 is up to date.
-Compiling vhdl file "//vboxsvr/github/picoblaze-processor/volladdierer.vhd" in Library work.
-Architecture logic_adder of Entity full_adder is up to date.
+Compiling vhdl file "//vboxsvr/github/picoblaze-processor/carry-chain-addierer.vhd" in Library work.
+Architecture behavior of Entity full_adder_3 is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/arithmetic-unit.vhd" in Library work.
 Architecture behavior of Entity arithmeticunit is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/logic-unit.vhd" in Library work.
@@ -32,19 +32,18 @@ Architecture behavior of Entity shiftunit is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/3-1-multiplexer.vhd" in Library work.
 Architecture behavior of Entity multiplexer is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/CalculationUnit.vhd" in Library work.
-WARNING:HDLParsers:3530 - Time stamp of file "//vboxsvr/github/picoblaze-processor/CalculationUnit.vhd" is newer than current system time.
 Entity <calculationunit> compiled.
 Entity <calculationunit> (Architecture <behavioral>) compiled.
 
 
-Total REAL time to Xst completion: 2.00 secs
-Total CPU time to Xst completion: 1.24 secs
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.65 secs
  
 --> 
 
-Total memory usage is 213144 kilobytes
+Total memory usage is 222680 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

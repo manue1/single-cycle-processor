@@ -1,5 +1,5 @@
 ISim log file
-Running: Z:\picoblaze-processor\tb_calculation_unit_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/picoblaze-processor/tb_calculation_unit_isim_beh.wdb 
+Running: Z:\picoblaze-processor\tb_alu_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/picoblaze-processor/tb_alu_isim_beh.wdb 
 ISim P.28xd (signature 0xa0883be4)
 This is a Full version of ISim.
 Time resolution is 1 ps
@@ -9,6 +9,6 @@ Time resolution is 1 ps
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart
-# run 160ns
+# run 100ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.

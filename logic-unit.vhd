@@ -20,26 +20,34 @@ end LogicUnit;
 
 architecture Behavior of LogicUnit is
 	signal result: STD_LOGIC_VECTOR (width - 1 downto 0);
-	signal c: STD_LOGIC;	-- c = 0 bei logischen Operationen 
-begin
-	-- Logische Operationen
-	with Op select
-		result <= (A and B) when "01",
-					 (A or B) when "10",
-					 (A xor B) when "11",
-					 (others => 'X') when others; 
-	Q <= result;
+	signal c: STD_LOGIC;	-- c = 0 bei logischen Operationen
 	
-	-- Erzeugung des Ubertrages
-	process (Test, result)
-	begin
-	c <= '0';
-		if (Test = '0') then
-			for i in result'RANGE loop
-				c <= c xor result(i);			-- c = 1 bet ungerader Eins-Paritaet 
-			end loop;
-		end if; 
+begin
 
-		Co <= c;
+		-- Erzeugung des Ubertrages
+	process (result)
+	begin
+		C <= '0';
+		for i in result'RANGE loop
+			if (Test = '0') then
+				c <= c xor result(i);			-- c = 1 bei ungerader Eins-Paritaet 
+			end if;
+		end loop;
 	end process;
+		
+	-- Logische Operationen
+	process (Op)
+		begin
+			if (Op = "01") then
+				result <= (A and B);
+			elsif (Op = "10") then
+				result <= (A or B);
+			elsif (Op = "11") then
+				result <= (A xor B);
+			else result <= "XXXXXXXX";
+			end if;
+	end process;
+	
+	Q <= result;
+	Co <= C;
 end Behavior;

@@ -33,6 +33,7 @@ architecture Behavior of ArithmeticUnit is
 		port (A: in STD_LOGIC_VECTOR (data_width - 1 downto 0);
 				B: in STD_LOGIC_VECTOR (data_width - 1 downto 0);
 				Q: out STD_LOGIC_VECTOR (data_width - 1 downto 0);
+				Ci: in STD_LOGIC;
 				Co: out STD_LOGIC);
 	end component;
 	
@@ -86,16 +87,16 @@ begin
 	
 	-- ADD Komponent
 
-G_ADD: for i in result'RANGE generate
-	ADD: Full_Adder
-		port map(E1 => op1(i), E2 => B(i), Ci => cyi, Q => result(i), Co => Co);
-end generate G_ADD;
+--G_ADD: for i in result'RANGE generate
+--	ADD: Full_Adder
+--		port map(E1 => op1(i), E2 => B(i), Ci => cyi, Q => result(i), Co => Co);
+--end generate G_ADD;
 		
 	-- ADDCY Komponent
 	
---	ADDCY: Full_Adder_3
---		generic map (width => data_width)
---		port map(A => op1, B => B, Q => result, Co => Co);
+	ADDCY: Full_Adder_3
+		generic map (width => data_width)
+		port map(A => op1, B => B, Q => result, Ci => cyi, Co => Co);
 		
 	-- Komponente zum Substrahieren --
 

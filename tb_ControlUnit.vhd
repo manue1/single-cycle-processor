@@ -93,20 +93,6 @@ BEGIN
 		Clk <= '1';
 		wait for Clk_period/2;
    end process;
- 
-
-   -- Stimulus process
-   stim_proc: process
-   begin		
-      -- hold reset state for 100 ns.
-      wait for 100 ns;	
-
-      wait for Clk_period*10;
-
-      -- insert stimulus here 
-
-      wait;
-   end process;
 
 	--global intern Reset
 	reset <= '1' after 2ns, '0' after 13ns;

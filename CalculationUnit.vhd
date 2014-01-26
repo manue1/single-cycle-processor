@@ -101,17 +101,6 @@ architecture Behavioral of CalculationUnit is
 												-- 0 -> SLO, SRO
 												-- 1 -> SLI, SRI 
 	end component;
-	
--- Eingangs-Operand als signal
-signal s_operand1: STD_LOGIC_VECTOR (width - 1 downto 0);
-signal s_operand2: STD_LOGIC_VECTOR (width - 1 downto 0);
-
--- Eingang Ci als intern Signal
-signal s_ci: STD_LOGIC;
-
--- Eingang Opcode und ShiftCode als interne Signale
-signal s_opcode: STD_LOGIC_VECTOR (4 downto 0);
-signal s_shiftcode: STD_LOGIC_VECTOR (3 downto 0);
 
 -- Opcode auslesen fuer 3 zu 1 Multiplexer Eingang
 signal opcode_mux: STD_LOGIC_VECTOR (1 downto 0);
@@ -120,9 +109,6 @@ signal opcode_mux: STD_LOGIC_VECTOR (1 downto 0);
 signal Co_Arithmetic: STD_LOGIC;
 signal Co_Logic: STD_LOGIC;
 signal Co_Shift: STD_LOGIC;
-
--- Intern Signal fuer Co
-signal s_co: STD_LOGIC;
 
 -- Intern Test Signal
 signal s_test: STD_LOGIC;
@@ -138,20 +124,16 @@ signal zero_flag: STD_LOGIC;
 
 begin
 
--- Zuweisung Eingang Opcode und ShiftCode als interne Signale
-s_opcode <= Opcode;
-s_shiftcode <= ShiftCode;
-
 	-- Umschaltung der Opcode fuer Multiplexer
-OP_FILTER: process (s_opcode)
+OP_FILTER: process (Opcode)
 				begin
-					if (s_opcode(4) = '1') then
+					if (Opcode(4) = '1') then
 						opcode_mux <= "10";
-					elsif (s_opcode(3) = '0') then
+					elsif (Opcode(3) = '0') then
 						opcode_mux <= "01";
-					elsif (s_opcode(2) = '1') then
+					elsif (Opcode(2) = '1') then
 						opcode_mux <= "00";
-					elsif (s_opcode(1) = '1') then
+					elsif (Opcode(1) = '1') then
 						opcode_mux <= "01";
 					else opcode_mux <= "01";
 					end if;
@@ -166,42 +148,35 @@ CAL_ZERO: process (result)
 					end loop;
 					Zo <= not zero_flag;
 			 end process CAL_ZERO;
-					
--- Zuweisung des Eingangsoperand nach interne Signale
-s_operand1 <= A;
-s_operand2 <= B;
-
--- Zuweisung Eingangs-Ci als intern Signal
-s_ci <= Ci;
 
 Arithmetic_Unit: ArithmeticUnit
 	generic map (data_width => width)
-	port map (A => s_operand1, B => s_operand2, Ci => s_ci, Q => Q_Arithmetic,
-				 Co => Co_Arithmetic, Op => s_opcode (1 downto 0));
+	port map (A => A, B => B, Ci => Ci, Q => Q_Arithmetic,
+				 Co => Co_Arithmetic, Op => Opcode (1 downto 0));
 
-P_TEST: process (s_opcode)
-			  begin
-				  if (s_opcode(3 downto 2) = "10") then
-						s_test <= '1';
-				  else s_test <= '0';
-				  end if;
-			  end process P_TEST;
-									
+--P_TEST: process (Opcode)
+--			  begin
+--				  if (Opcode(3 downto 2) = "10") then
+--						s_test <= '1';
+--				  else s_test <= '0';
+--				  end if;
+--			  end process P_TEST;
+
 Logic_Unit : LogicUnit
 	generic map (width => width)
-	port map (A => s_operand1, B => s_operand2, Q => Q_Logic, Co => Co_Logic,
-				 Op => s_opcode (1 downto 0), Test => s_test);
+	port map (A => A, B => B, Q => Q_Logic, Co => Co_Logic,
+				 Op => Opcode (1 downto 0), Test => not Opcode(2));
 	
 Shift_Unit: ShiftUnit
 	generic map (width => width)
-	port map (A => s_operand1, Ci => s_ci, Q => Q_Shift, Co => Co_Shift,
-				 Op => s_shiftcode (2 downto 1), Dir => s_shiftcode(3),
-				 ExtBit => s_shiftcode(0));
+	port map (A => A, Ci => Ci, Q => Q_Shift, Co => Co_Shift,
+				 Op => ShiftCode (2 downto 1), Dir => ShiftCode(3),
+				 ExtBit => ShiftCode(0));
 
 -- Multiplexer 3 zu 1 fuer Uebertrag zwischen Arithmetic, Logic und Shift
 MUX_Co : Multiplexer
 	port map (A => Co_Arithmetic, B => Co_Logic,
-				 C => Co_Shift, Q => s_co, S => opcode_mux);
+				 C => Co_Shift, Q => Co, S => opcode_mux);
 
 -- Multiplexer 3 zu 1 fuer Ergebnis zwischen Arithmetic, Logic und Shift
 RESULT_MUX: for i in result'RANGE generate
@@ -214,6 +189,5 @@ RESULT_MUX: for i in result'RANGE generate
 end generate RESULT_MUX;
 
 Q <= result;
-Co <= s_co;
 
 end Behavioral;
