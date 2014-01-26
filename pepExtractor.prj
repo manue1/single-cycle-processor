@@ -1,3 +1,2 @@
-work	"2-1-multiplexer.vhd"
-work	"4-1-multiplexer.vhd"
-work	"shift-unit.vhd"
+work	"dff_re.vhd"
+work	"hardware-access-unit.vhd"

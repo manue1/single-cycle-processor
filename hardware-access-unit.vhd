@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity HardwareAccessUnit is
-	generic (data_width: positive); -- Datenbreite
+	generic (data_width: integer := 8); -- Datenbreite
 	port (	-- Datenleitungen
 			OPERAND_1: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Operand 1
 			OPERAND_2: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Operand 2

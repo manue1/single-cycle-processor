@@ -1,4 +1,0 @@
-vhdl work "4-1-multiplexer.vhd"
-vhdl work "2-1-multiplexer.vhd"
-vhdl work "shift-unit.vhd"
-vhdl work "tb_shift_unit.vhd"

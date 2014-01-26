@@ -18,7 +18,7 @@ end ArithmeticLogicUnit;
 architecture Behavioral of ArithmeticLogicUnit is
 
 	component CalculationUnit is
-		generic (width: positive);			-- Verarbeitungsbreite
+		generic (width: integer := 8);			-- Verarbeitungsbreite
 		port (-- Datenleitungen
 			  A: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 1
 			  B: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 2

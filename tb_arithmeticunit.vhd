@@ -2,10 +2,10 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
-ENTITY tb_arithmeticunit IS
-END tb_arithmeticunit;
+ENTITY tb_arithmetic_unit IS
+END tb_arithmetic_unit;
  
-ARCHITECTURE behavior OF tb_arithmeticunit IS 
+ARCHITECTURE behavior OF tb_arithmetic_unit IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  

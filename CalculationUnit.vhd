@@ -3,7 +3,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity CalculationUnit is
-	generic (width: positive);			-- Verarbeitungsbreite
+	generic (width: integer := 8);			-- Verarbeitungsbreite
 	port (-- Datenleitungen
 		  A: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 1
 		  B: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 2
@@ -102,13 +102,27 @@ architecture Behavioral of CalculationUnit is
 												-- 1 -> SLI, SRI 
 	end component;
 	
--- Opcode auslesen als 3 zu 1 Multiplexer Eingang
+-- Eingangs-Operand als signal
+signal s_operand1: STD_LOGIC_VECTOR (width - 1 downto 0);
+signal s_operand2: STD_LOGIC_VECTOR (width - 1 downto 0);
+
+-- Eingang Ci als intern Signal
+signal s_ci: STD_LOGIC;
+
+-- Eingang Opcode und ShiftCode als interne Signale
+signal s_opcode: STD_LOGIC_VECTOR (4 downto 0);
+signal s_shiftcode: STD_LOGIC_VECTOR (3 downto 0);
+
+-- Opcode auslesen fuer 3 zu 1 Multiplexer Eingang
 signal opcode_mux: STD_LOGIC_VECTOR (1 downto 0);
 	
 -- Ausgangssignal fuer Co alle Units
 signal Co_Arithmetic: STD_LOGIC;
 signal Co_Logic: STD_LOGIC;
 signal Co_Shift: STD_LOGIC;
+
+-- Intern Signal fuer Co
+signal s_co: STD_LOGIC;
 
 -- Ausgangssignal fuer Q alle Units
 signal Q_Arithmetic: STD_LOGIC_VECTOR (width - 1 downto 0);
@@ -120,16 +134,21 @@ signal result: STD_LOGIC_VECTOR (width - 1 downto 0);
 signal zero_flag: STD_LOGIC;
 
 begin
+
+-- Zuweisung Eingang Opcode und ShiftCode als interne Signale
+s_opcode <= Opcode;
+s_shiftcode <= ShiftCode;
+
 	-- Umschaltung der Opcode fuer Multiplexer
-OP_FILTER: process (Opcode)
+OP_FILTER: process (s_opcode)
 				begin
-					if (Opcode(4) = '1') then
+					if (s_opcode(4) = '1') then
 						opcode_mux <= "10";
-					elsif (Opcode(3) = '0') then
+					elsif (s_opcode(3) = '0') then
 						opcode_mux <= "01";
-					elsif (Opcode(2) = '1') then
+					elsif (s_opcode(2) = '1') then
 						opcode_mux <= "00";
-					elsif (Opcode(1) = '0') then
+					elsif (s_opcode(1) = '0') then
 						opcode_mux <= "00";
 					else opcode_mux <= "01";
 					end if;
@@ -145,25 +164,33 @@ CAL_ZERO: process (result)
 					Zo <= not zero_flag;
 			 end process CAL_ZERO;
 					
+-- Zuweisung des Eingangsoperand nach interne Signale
+s_operand1 <= A;
+s_operand2 <= B;
+
+-- Zuweisung Eingangs-Ci als intern Signal
+s_ci <= Ci;
 
 Arithmetic_Unit: ArithmeticUnit
 	generic map (width => width)
-	port map (A => A, B => A, Ci => Ci, Q => Q_Arithmetic,
-				 Co => Co_Arithmetic, Op => Opcode (1 downto 0));
+	port map (A => s_operand1, B => s_operand2, Ci => s_ci, Q => Q_Arithmetic,
+				 Co => Co_Arithmetic, Op => s_opcode (1 downto 0));
 									
 Logic_Unit : LogicUnit
 	generic map (width => width)
-	port map (A => A, B => B, Q => Q_Logic, Co => Co_Logic,
-				 Op => Opcode (1 downto 0), Test => Opcode(2));
+	port map (A => s_operand1, B => s_operand2, Q => Q_Logic, Co => Co_Logic,
+				 Op => s_opcode (1 downto 0), Test => s_opcode(2));
 	
 Shift_Unit: ShiftUnit
 	generic map (width => width)
-	port map (A => A, Ci => Ci, Q => Q_Shift, Co => Co_Shift,
-				 Op => ShiftCode (2 downto 1), Dir => ShiftCode(3),
-				 ExtBit => Shiftcode(0));
+	port map (A => s_operand1, Ci => s_ci, Q => Q_Shift, Co => Co_Shift,
+				 Op => s_shiftcode (2 downto 1), Dir => s_shiftcode(3),
+				 ExtBit => s_shiftcode(0));
 
 -- Multiplexer 3 zu 1 fuer Uebertrag zwischen Arithmetic, Logic und Shift
-MUX_Co : Multiplexer port map (A => Co_Arithmetic, B => Co_Logic, C => Co_Shift, Q => Co, S => opcode_mux);
+MUX_Co : Multiplexer
+	port map (A => Co_Arithmetic, B => Co_Logic,
+				 C => Co_Shift, Q => s_co, S => opcode_mux);
 
 -- Multiplexer 3 zu 1 fuer Ergebnis zwischen Arithmetic, Logic und Shift
 RESULT_MUX: for i in result'RANGE generate
@@ -176,5 +203,6 @@ RESULT_MUX: for i in result'RANGE generate
 end generate RESULT_MUX;
 
 Q <= result;
+Co <= s_co;
 
 end Behavioral;
