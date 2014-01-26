@@ -59,9 +59,50 @@ BEGIN
 
 -- Testen von Shift Unit unter Calculation Unit
 
-Opcode <= "00", "01" after 32ns, "10" after 64ns, "11" after 96ns;
-Ci <= '0', '1' after 16ns, '0' after 32ns, '1' after 48ns, '0' after 80ns, '1' after 96ns, '0' after 128ns;
-ExtBit <= 'U', '0' after 96ns, '1' after 128ns;
+P_A: process
+	begin
+		A <= "10100101";
+		wait for 16ns;
+		A <= "01001010";
+		wait for 16ns;
+		A <= "10100101";
+		wait for 16ns;
+		A <= "01001011";
+		wait for 16ns;
+		A <= "00100101";
+		wait for 16ns;
+		A <= "01001011";
+		wait for 16ns;
+		A <= "10100101";
+		wait for 16ns;
+		A <= "01001010";
+		wait for 16ns;
+		wait for 16ns;
+		A <= "00100101";
+		wait for 16ns;
+		A <= "01001011";
+		wait for 16ns;
+	end process;
+	
+B <= "UUUUUUUU";
 
+Opcode <= "10000";
+Ci <= '0', '1' after 16ns, '0' after 32ns, '1' after 48ns, '0' after 80ns, '1' after 96ns, '0' after 128ns;
+ShiftCode <= "000U",
+				 "100U" after 16ns,
+				 "001U" after 32ns,
+				 "101U" after 48ns,
+				 "010U" after 64ns,
+				 "110U" after 80ns,
+				 "0110" after 96ns,
+				 "1111" after 128ns;
+
+-- Testen von Logic Unit unter Calculation Unit
+
+--A <= "01010101";
+--B <= "00110011", "00110101" after 80ns;
+--Opcode <= "01000", "01001" after 16ns, "01010" after 32ns, "01011" after 48ns, "00101" after 64ns;
+--ShiftCode <= "0000";
+--Ci <= '0';
 
 END;

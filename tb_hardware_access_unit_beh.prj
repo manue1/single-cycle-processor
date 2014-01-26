@@ -1,3 +1,0 @@
-vhdl work "dff_re.vhd"
-vhdl work "hardware-access-unit.vhd"
-vhdl work "tb_hardware_access_unit.vhd"

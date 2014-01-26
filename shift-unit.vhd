@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity ShiftUnit is
-	generic (width: positive);		-- Verarbeitungsbreite (> 1) 
+	generic (width: integer:= 8);		-- Verarbeitungsbreite (> 1) 
 	port (	-- Datenleitungen
 			A: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 
 			Ci: in STD_LOGIC;								-- Carry Flag am Eingang 

@@ -49,12 +49,12 @@ architecture Behavioral of CalculationUnit is
 	end component;
 
 	component ArithmeticUnit is
-		generic (width: positive);							-- Verarbeitungsbreite
+		generic (data_width: integer := 8);							-- Verarbeitungsbreite
 		port (-- Datenleitungen
-			  A: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 1
-			  B: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 2
+			  A: in STD_LOGIC_VECTOR (data_width - 1 downto 0);	-- Operand 1
+			  B: in STD_LOGIC_VECTOR (data_width - 1 downto 0);	-- Operand 2
 			  Ci: in STD_LOGIC;										-- Uebertrag am Eingang
-			  Q: out STD_LOGIC_VECTOR (width - 1 downto 0);	-- Ergebnis
+			  Q: out STD_LOGIC_VECTOR (data_width - 1 downto 0);	-- Ergebnis
 			  Co: out STD_LOGIC;										-- Uebertrag
 			  -- Steuerleitungen
 			  Op: in STD_LOGIC_VECTOR (1 downto 0));		-- Bits 14 und 13 des Befehlskodes
@@ -124,6 +124,9 @@ signal Co_Shift: STD_LOGIC;
 -- Intern Signal fuer Co
 signal s_co: STD_LOGIC;
 
+-- Intern Test Signal
+signal s_test: STD_LOGIC;
+
 -- Ausgangssignal fuer Q alle Units
 signal Q_Arithmetic: STD_LOGIC_VECTOR (width - 1 downto 0);
 signal Q_Logic: STD_LOGIC_VECTOR (width - 1 downto 0);
@@ -148,8 +151,8 @@ OP_FILTER: process (s_opcode)
 						opcode_mux <= "01";
 					elsif (s_opcode(2) = '1') then
 						opcode_mux <= "00";
-					elsif (s_opcode(1) = '0') then
-						opcode_mux <= "00";
+					elsif (s_opcode(1) = '1') then
+						opcode_mux <= "01";
 					else opcode_mux <= "01";
 					end if;
 				end process OP_FILTER;
@@ -172,14 +175,22 @@ s_operand2 <= B;
 s_ci <= Ci;
 
 Arithmetic_Unit: ArithmeticUnit
-	generic map (width => width)
+	generic map (data_width => width)
 	port map (A => s_operand1, B => s_operand2, Ci => s_ci, Q => Q_Arithmetic,
 				 Co => Co_Arithmetic, Op => s_opcode (1 downto 0));
+
+P_TEST: process (s_opcode)
+			  begin
+				  if (s_opcode(3 downto 2) = "10") then
+						s_test <= '1';
+				  else s_test <= '0';
+				  end if;
+			  end process P_TEST;
 									
 Logic_Unit : LogicUnit
 	generic map (width => width)
 	port map (A => s_operand1, B => s_operand2, Q => Q_Logic, Co => Co_Logic,
-				 Op => s_opcode (1 downto 0), Test => s_opcode(2));
+				 Op => s_opcode (1 downto 0), Test => s_test);
 	
 Shift_Unit: ShiftUnit
 	generic map (width => width)

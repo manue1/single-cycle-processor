@@ -3,14 +3,14 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to Z:/picoblaze-processor/xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> Parameter xsthdpdir set to Z:/picoblaze-processor/xst
 
 
-Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.14 secs
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.21 secs
  
 --> WARNING:Xst:3164 - Option "-debug" found multiple times in the command line. Only the first occurence is considered.
 
@@ -32,18 +32,19 @@ Architecture behavior of Entity shiftunit is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/3-1-multiplexer.vhd" in Library work.
 Architecture behavior of Entity multiplexer is up to date.
 Compiling vhdl file "//vboxsvr/github/picoblaze-processor/CalculationUnit.vhd" in Library work.
+WARNING:HDLParsers:3530 - Time stamp of file "//vboxsvr/github/picoblaze-processor/CalculationUnit.vhd" is newer than current system time.
 Entity <calculationunit> compiled.
 Entity <calculationunit> (Architecture <behavioral>) compiled.
 
 
-Total REAL time to Xst completion: 1.00 secs
-Total CPU time to Xst completion: 0.84 secs
+Total REAL time to Xst completion: 2.00 secs
+Total CPU time to Xst completion: 1.24 secs
  
 --> 
 
-Total memory usage is 213400 kilobytes
+Total memory usage is 213144 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 
