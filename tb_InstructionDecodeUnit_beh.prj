@@ -1,3 +1,0 @@
-vhdl work "d_ram_2.vhd"
-vhdl work "instruction-decode-unit.vhd"
-vhdl work "tb_InstructionDecodeUnit.vhd"
