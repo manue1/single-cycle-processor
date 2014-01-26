@@ -1,0 +1,2 @@
+vhdl work "logic-unit.vhd"
+vhdl work "tb_logic_unit.vhd"
