@@ -51,12 +51,17 @@ BEGIN
 		  
 -- Testen von Arithmetic Unit unter Calculation Unit
 
-Opcode <= "01100", "01101" after 15ns, "01101" after 30ns, "01110" after 45ns, "01111" after 60ns, "01111" after 75ns;
-A <= "11111110", "10000001" after 45ns;
-B <= "00000001";
-Ci <= 'U', '0' after 15ns, '1' after 30ns, 'U' after 45ns, '0' after 60ns, '1' after 75ns;
-ShiftCode <= "0000";
+--Opcode <= "01100", "01101" after 15ns, "01101" after 30ns, "01110" after 45ns, "01111" after 60ns, "01111" after 75ns;
+--A <= "11111110", "10000001" after 45ns;
+--B <= "00000001";
+--Ci <= 'U', '0' after 15ns, '1' after 30ns, 'U' after 45ns, '0' after 60ns, '1' after 75ns;
+--ShiftCode <= "0000";
 
+-- Testen von Shift Unit unter Calculation Unit
+
+Opcode <= "00", "01" after 32ns, "10" after 64ns, "11" after 96ns;
+Ci <= '0', '1' after 16ns, '0' after 32ns, '1' after 48ns, '0' after 80ns, '1' after 96ns, '0' after 128ns;
+ExtBit <= 'U', '0' after 96ns, '1' after 128ns;
 
 
 END;
