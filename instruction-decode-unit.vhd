@@ -44,7 +44,7 @@ architecture Behavior of InstructionDecodeUnit is
 	
 	-- interne Register
 	component D_RAM_2		-- RegisterFile
-		generic (	addr_width: positive; -- Adressbreite
+		generic (addr_width: positive; -- Adressbreite
 					data_width: positive); -- Datenbreite
 		port (-- Datenleitungen
 				Address1: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse des 1. Leseports

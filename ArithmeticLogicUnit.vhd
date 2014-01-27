@@ -3,13 +3,15 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity ArithmeticLogicUnit is
-	 Generic (data_width: positive);
+	 Generic (data_width: positive;
+	 		  cmd_width: positive);
     Port ( A : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
            B : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
+           Instruction: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0);
            Clk : in  STD_LOGIC;
 			  Reset : in  STD_LOGIC;
-           ShiftCode : in  STD_LOGIC_VECTOR (3 downto 0);
-           OpCode : in  STD_LOGIC_VECTOR (4 downto 0);
+           -- ShiftCode : in  STD_LOGIC_VECTOR (3 downto 0);
+           -- OpCode : in  STD_LOGIC_VECTOR (4 downto 0);
            Result : out  STD_LOGIC_VECTOR (data_width - 1 downto 0);
            ZF : out  STD_LOGIC;
            CF : out  STD_LOGIC);
@@ -23,31 +25,32 @@ architecture Behavioral of ArithmeticLogicUnit is
 			  A: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 1
 			  B: in STD_LOGIC_VECTOR (width - 1 downto 0);	-- Operand 2
 			  Ci: in STD_LOGIC;										-- Uebertrag am Eingang
+			  Instruction: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0);
 			  Q: out STD_LOGIC_VECTOR (width - 1 downto 0);	-- Ergebnis
 			  Co: out STD_LOGIC;										-- Uebertrag
-			  Zo: out STD_LOGIC;										-- Zero flag
+			  Zo: out STD_LOGIC);										-- Zero flag
 			  -- Steuerleitungen
-			  Opcode: in STD_LOGIC_VECTOR (4 downto 0);		-- This information is received from instruction decode unit
+			  -- Opcode: in STD_LOGIC_VECTOR (4 downto 0);		-- This information is received from instruction decode unit
 																		
-																		-- Arithmetic Unit --
-																		-- Bits 14 und 13 des Befehlskodes
-																		-- 00 -> ADD
-																		-- 01 -> ADDCY
-																		-- 10 -> SUB, COMPARE
-																		-- 11 -> SUBCY
+					-- 													-- Arithmetic Unit --
+					-- 													-- Bits 14 und 13 des Befehlskodes
+					-- 													-- 00 -> ADD
+					-- 													-- 01 -> ADDCY
+					-- 													-- 10 -> SUB, COMPARE
+					-- 													-- 11 -> SUBCY
 																		
-																		-- Logic Unit --
-																		-- Bits 14 und 13 des Befehlskodes
-																		-- 01 -> AND, TEST
-																		-- 10 -> OR
-																		-- 11 -> XOR
-				ShiftCode: in STD_LOGIC_VECTOR (3 downto 0)); -- Kodierung des Schiebe- und Rotationsbefehls
-																			  -- Shift Unit
-																			  -- Bits 2 und 1 des Befehlskodes
-																			  -- 00 -> SLA, SEA
-																			  -- 01 -> RL, SEX
-																			  -- 10 -> SLX, RR
-																			  -- 11 -> SLO, SL1, SRO, SR1
+					-- 													-- Logic Unit --
+					-- 													-- Bits 14 und 13 des Befehlskodes
+					-- 													-- 01 -> AND, TEST
+					-- 													-- 10 -> OR
+					-- 													-- 11 -> XOR
+				-- ShiftCode: in STD_LOGIC_VECTOR (3 downto 0)); -- Kodierung des Schiebe- und Rotationsbefehls
+				-- 															  -- Shift Unit
+				-- 															  -- Bits 2 und 1 des Befehlskodes
+				-- 															  -- 00 -> SLA, SEA
+				-- 															  -- 01 -> RL, SEX
+				-- 															  -- 10 -> SLX, RR
+				-- 															  -- 11 -> SLO, SL1, SRO, SR1
 																		
 	end component;
 	
@@ -92,11 +95,10 @@ Calculation_Unit: CalculationUnit
 	port map (A => A, B => B,
 				 Ci => s_cf_flagregister_out,
 				 Q => s_result_out, Co => s_cf_calcunit_out,
-				 Zo => s_zf_calcunit_out, Opcode => OpCode,
-				 ShiftCode => ShiftCode);
+				 Zo => s_zf_calcunit_out, Instruction => Instruction);
 
 -- Write enable signal fuer Flag Register
-s_cf_zf_write_enable <= OpCode(4) xor (OpCode(3) or OpCode(2));
+s_cf_zf_write_enable <= Instruction(17) xor (Instruction(16) or Instruction(15));
 
 Flag_Register: FlagRegister
 	port map (Ci => s_cf_calcunit_out,

@@ -70,7 +70,7 @@ BEGIN
 		wait for Clk_period/2;
    end process;
  
-   Instruction <= "000000000100001010" after 6ns, "111100000000000001" after 16ns, "000001110000010000" after 26ns, "100000000100001111" after 36ns, "110101110110101110" after 46ns, "110100001001010011" after 56ns;
+   Instruction <= "UUUUUUUUUUUUUUUUUU", "000000000100001010" after 6ns, "111100000000000001" after 16ns, "000001110000010000" after 26ns, "100000000100001111" after 36ns, "110101110110101110" after 46ns, "110100001001010011" after 56ns;
    WriteEnable <= '1' after 7ns, '0' after  17ns, '1' after 27ns, '0' after 47ns;
    Result <= "00000001" after 6ns;
 	
