@@ -1,11 +1,21 @@
 ISim log file
-Running: Z:\picoblaze-processor\tb_alu_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/picoblaze-processor/tb_alu_isim_beh.wdb 
+Running: Z:\picoblaze-processor\tb_arithmetic_unit_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb Z:/picoblaze-processor/tb_arithmetic_unit_isim_beh.wdb 
 ISim P.28xd (signature 0xa0883be4)
 This is a Full version of ISim.
 Time resolution is 1 ps
 # onerror resume
 # wave add /
 # run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 100ns
+ISim P.28xd (signature 0xa0883be4)
+This is a Full version of ISim.
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# run all
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
 # restart

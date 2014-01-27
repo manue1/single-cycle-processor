@@ -1,21 +1,12 @@
-Running: C:\temp\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o Z:/picoblaze-processor/tb_alu_isim_beh.exe -prj Z:/picoblaze-processor/tb_alu_beh.prj work.tb_alu 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "Z:/picoblaze-processor/tb_arithmetic_unit_isim_beh.exe" -prj "Z:/picoblaze-processor/tb_arithmetic_unit_beh.prj" "work.tb_arithmetic_unit" 
 ISim P.28xd (signature 0xa0883be4)
 Number of CPUs detected in this system: 1
 Turning on mult-threading, number of parallel sub-compilation jobs: 0 
 Determining compilation order of HDL files
 Parsing VHDL file "Z:/picoblaze-processor/carry-chain-addierer.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/4-1-multiplexer.vhd" into library work
 Parsing VHDL file "Z:/picoblaze-processor/2-1-multiplexer.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/shift-unit.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/logic-unit.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/dff_re.vhd" into library work
 Parsing VHDL file "Z:/picoblaze-processor/arithmetic-unit.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/3-1-multiplexer.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/flag-register.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/CalculationUnit.vhd" into library work
-WARNING:HDLCompiler:946 - "Z:/picoblaze-processor/CalculationUnit.vhd" Line 168: Actual for formal port test is neither a static name nor a globally static expression
-Parsing VHDL file "Z:/picoblaze-processor/ArithmeticLogicUnit.vhd" into library work
-Parsing VHDL file "Z:/picoblaze-processor/tb_alu.vhd" into library work
+Parsing VHDL file "Z:/picoblaze-processor/tb_arithmeticunit.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -26,17 +17,9 @@ Compiling architecture muxcy_v of entity MUXCY [muxcy_default]
 Compiling architecture xorcy_v of entity XORCY [xorcy_default]
 Compiling architecture behavior of entity Full_Adder_3 [\Full_Adder_3(8)\]
 Compiling architecture behavior of entity ArithmeticUnit [\ArithmeticUnit(8)\]
-Compiling architecture behavior of entity LogicUnit [\LogicUnit(8)\]
-Compiling architecture behavior of entity Multiplexer_4_to_1 [multiplexer_4_to_1_default]
-Compiling architecture behavior of entity ShiftUnit [\ShiftUnit(8)\]
-Compiling architecture behavior of entity Multiplexer [multiplexer_default]
-Compiling architecture behavioral of entity CalculationUnit [\CalculationUnit(8)\]
-Compiling architecture behavior of entity DFlipFlop_RE [dflipflop_re_default]
-Compiling architecture behavior of entity FlagRegister [flagregister_default]
-Compiling architecture behavioral of entity ArithmeticLogicUnit [\ArithmeticLogicUnit(8)\]
-Compiling architecture behavior of entity tb_alu
+Compiling architecture behavior of entity tb_arithmetic_unit
 Time Resolution for simulation is 1ps.
-Compiled 30 VHDL Units
-Built simulation executable Z:/picoblaze-processor/tb_alu_isim_beh.exe
-Fuse Memory Usage: 42312 KB
-Fuse CPU Usage: 905 ms
+Compiled 14 VHDL Units
+Built simulation executable Z:/picoblaze-processor/tb_arithmetic_unit_isim_beh.exe
+Fuse Memory Usage: 41960 KB
+Fuse CPU Usage: 1621 ms

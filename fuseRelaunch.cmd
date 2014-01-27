@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "Z:/picoblaze-processor/tb_alu_isim_beh.exe" -prj "Z:/picoblaze-processor/tb_alu_beh.prj" "work.tb_alu" 
+-intstyle "ise" -incremental -o "Z:/picoblaze-processor/tb_arithmetic_unit_isim_beh.exe" -prj "Z:/picoblaze-processor/tb_arithmetic_unit_beh.prj" "work.tb_arithmetic_unit" 
