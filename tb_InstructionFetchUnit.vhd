@@ -12,7 +12,6 @@ ARCHITECTURE behavior OF tb_InstructionFetchUnit IS
     COMPONENT InstructionFetchUnit
     PORT(
          JumpAddress : IN  std_logic_vector(9 downto 0);
-         Opcode : IN  std_logic_vector(17 downto 0);
          Instruction : OUT  std_logic_vector(17 downto 0);
          Clk : IN  std_logic;
          WriteEnable : IN  std_logic;
@@ -27,7 +26,6 @@ ARCHITECTURE behavior OF tb_InstructionFetchUnit IS
 
    --Inputs
    signal JumpAddress : std_logic_vector(9 downto 0) := (others => '0');
-   signal Opcode : std_logic_vector(17 downto 0) := (others => '0');
    signal Clk : std_logic := '0';
    signal WriteEnable : std_logic := '0';
    signal LoadStartAddress : std_logic := '0';
@@ -47,7 +45,6 @@ BEGIN
 	-- Instantiate the Unit Under Test (UUT)
    uut: InstructionFetchUnit PORT MAP (
           JumpAddress => JumpAddress,
-          Opcode => Opcode,
           Instruction => Instruction,
           Clk => Clk,
           WriteEnable => WriteEnable,

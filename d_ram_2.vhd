@@ -21,17 +21,13 @@ architecture Behavior of D_RAM_2 is
 	-- Speicher als interne Komponente definieren und initialisieren
 	signal ram: RAM_TYPE:= (others => (others => '0'));
 	
-	-- Zusammensetzen von Addr1 und Addr2 als Addr
-	signal Address: STD_LOGIC_VECTOR ((2**addr_width) - 1 downto 0);
-	
 begin
 	-- synchroner Schreibzugriff
 	P1: process (Clk)
 	begin
 		if (rising_edge (Clk)) then
 			if (WriteEnable = '1') then
-				Address <= Address1 & Address2;
-				ram(conv_integer (Address)) <= DataIn;
+				ram(conv_integer (Address1)) <= DataIn;
 			end if;
 		end if;
 	end process P1;

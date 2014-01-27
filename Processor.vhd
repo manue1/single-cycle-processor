@@ -3,7 +3,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity Processor is
-	generic ( 	data_width: positive := 8;			-- Datenbreite
+	generic (data_width: positive := 8;			-- Datenbreite
 				cmd_width: positive := 18; 			-- Befehlsbreite
 				cmd_addr_width: positive := 10; 	-- Adressbreite des Befehlsspeichers
 				stack_addr_width: positive := 5);
@@ -106,13 +106,15 @@ architecture Structural of Processor is
 	-- ========================================
 
 	component ArithmeticLogicUnit is
-	generic (	data_width : positive);
+	generic (	data_width : positive;
+				cmd_width: positive);
     	port ( 	A : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	           	B : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
+	           	Instruction: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0);
 	           	Clk : in  STD_LOGIC;
 					Reset : in  STD_LOGIC;
-	           	ShiftCode : in  STD_LOGIC_VECTOR (3 downto 0);
-	           	OpCode : in  STD_LOGIC_VECTOR (4 downto 0);
+	           	-- ShiftCode : in  STD_LOGIC_VECTOR (3 downto 0);
+	           	-- OpCode : in  STD_LOGIC_VECTOR (4 downto 0);
 	           	Result : out  STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	           	ZF : out  STD_LOGIC;
 	           	CF : out  STD_LOGIC);
@@ -194,7 +196,7 @@ architecture Structural of Processor is
 			  CarryIn => s_ci_alu_cu, -- Eingang des Carry-Flags
 			  CarryOut => s_co_alu_cu, -- Ausgang des Carry-Flags
 			  ZeroIn => s_zi_alu_cu, -- Eingang des Zero-Flags
-			  IEIn => '0', -- Eingang des Interrupt-Enab1e-Flags
+			  IEIn => '0', -- Eingang des Interrupt-Enable-Flags
 			  -- Steuerleitungen
 			  Clk => Clk, -- Takt
 			  Reset => Reset, -- Ruecksetzen
@@ -216,12 +218,12 @@ architecture Structural of Processor is
 		generic map (	cmd_width => cmd_width,
 						cmd_addr_width => cmd_addr_width)
 		port map (-- Datenleitungen
-				JumpAddress => s_jumpaddr_idu_ifu, -- Sprungadresse
+				JumpAddress => s_address_idu_dmu, -- Sprungadresse
 				Instruction => instruction, -- naechster Befehl
 				-- Steuerleitungen
 				Clk => Clk, -- Takt
 				WriteEnable => s_we_cu, -- Schreibfreigabe des Befehlszaehlers
-				LoadStartAddress => '0', -- Startadresse laden
+				LoadStartAddress => s_internalreset_cu_alu, -- Startadresse laden
 				LoadJumpAddress => s_loadjumpaddr_cu_ifu, -- Sprungadresse laden
 				RestoreCmdAddress => s_restorecmdaddr_cu_ifu, -- Laden einer Adresse vom Stack
 				LoadInterruptAddress => s_loadintaddr_cu, -- Interrupt-Adresse laden
@@ -246,13 +248,13 @@ architecture Structural of Processor is
 				Condition => s_condition_idu_cu);  -- Sprungbedingung
 
 	ALU: ArithmeticLogicUnit
-		generic map (	data_width => data_width) -- Datenbreite
+		generic map (	data_width => data_width,
+							cmd_width => cmd_width) -- Datenbreite
 		port map ( 	A => s_op1,
 		           	B => s_op2,
+		           	Instruction => instruction,
 		           	Clk => Clk,
 					Reset => s_internalreset_cu_alu,
-		           	ShiftCode => s_shiftcode,
-		           	OpCode => s_opcode_cu,
 		           	Result => computation_result,
 		           	ZF => s_zi_alu_cu,
 		           	CF => s_ci_alu_cu);
@@ -312,4 +314,6 @@ architecture Structural of Processor is
 					Y => result(i),
 					S => d_mux_control_3);
 	end generate G_MUX;
+	
+	Out_port <= result;
 end Structural;

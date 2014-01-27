@@ -4,13 +4,12 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity InstructionFetchUnit is
 	-- for Testbench
-	generic (	cmd_width: integer := 18; -- Befehlsbreite
-				cmd_addr_width: integer := 10); -- Adressbreite des Befehlsspeichers
-				--stack_addr_width: integer := 5); -- Adressbreite des Call/return-Stapels
-	-- -- for Processor
-	-- generic (	cmd_width: cmd_width; -- Befehlsbreite
-	-- 			cmd_addr_width: cmd_addr_width; -- Adressbreite des Befehlsspeichers
-	-- 			stack_addr_width: stack_addr_width); -- Adressbreite des Call/return-Stapels
+	generic (cmd_width: integer := 18; -- Befehlsbreite
+				cmd_addr_width: integer := 10; -- Adressbreite des Befehlsspeichers
+				stack_addr_width: integer := 5); -- Adressbreite des Call/return-Stapels
+--	-- -- for Processor
+--	 			cmd_addr_width: cmd_addr_width; -- Adressbreite des Befehlsspeichers
+--	 			stack_addr_width: stack_addr_width); -- Adressbreite des Call/return-Stapels
 	port (-- Datenleitungen
 			JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
 			Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
@@ -31,38 +30,23 @@ architecture Behavior of InstructionFetchUnit is
 	-- Ein- und Ausgang des Addierers
 	signal s_addr_add_in: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
 	signal s_addr_add_out: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
+	
+--	-- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
+--	 component CallReturnStack
+--	 	generic (addr_width: positive; -- Adressbreite
+--	 			 data_width: positive); -- Datenbreite
+--	 port (-- Datenleitungen
+--	 	  DataIn: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Dateneingang
+--	 	  DataOut: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
+--
+--	 	  -- Steuerleitungen
+--	 	  Clk: in STD_LOGIC; -- Takt
+--	 	  Push: in STD_LOGIC; -- Daten speichern
+--	 	  Pop: in STD_LOGIC); -- Daten lesen
+--	 end component CallReturnStack;
 
-<<<<<<< HEAD
-	-- Call/Return—Stapel - nicht Bestandteil der Belegarbeit
-	-- component CallReturnStack
-	-- 	generic (addr_width: positive; -- Adressbreite
-	-- 			 data_width: positive); -- Datenbreite
-	-- port (-- Datenleitungen
-	-- 	  DataIn: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Dateneingang
-	-- 	  DataOut: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
-
-	-- 	  -- Steuerleitungen
-	-- 	  Clk: in STD_LOGIC; -- Takt
-	-- 	  Push: in STD_LOGIC; -- Daten speichern
-	-- 	  Pop: in STD_LOGIC); -- Daten lesen
-	-- end component CallReturnStack;
-=======
--- Ausgangssignale des Stapelspeichers
-signal s_stack_out: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
-
--- -- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
--- 	component CallReturnStack
--- 		generic (addr_width: positive; -- Adressbreite
--- 					data_width: positive); -- Datenbreite
--- 		port (-- Datenleitungen
--- 				DataIn: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Dateneingang
--- 				DataOut: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
--- 				-- Steuerleitungen
--- 			   Clk: in STD_LOGIC; -- Takt
--- 				Push: in STD_LOGIC; -- Daten speichern
--- 			   Pop: in STD_LOGIC); -- Daten lesen
--- 	 end component CallReturnStack;
->>>>>>> master
+---- Ausgangssignale des Stapelspeichers
+--signal s_stack_out: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
 
 	-- Befehlsspeicher
 	component P_ROM
@@ -77,7 +61,7 @@ begin
 	-- Adress-Multiplexer
 	with RestoreCmdAddress select
 		s_addr_add_in <= s_addr_out when '0',
-						 s_stack_out when '1',
+						 --s_stack_out when '1',
 						 (others => 'X') when others;
 	with LoadJumpAddress select
 		s_addr_in <= s_addr_add_out when '0',
@@ -103,19 +87,19 @@ begin
 	end if;
 end process PC;
 
-<<<<<<< HEAD
-	-- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
-	-- CRS: CallReturnStack
-	-- generic map (addr_width => stack_addr_width, data_width => cmd_addr_width)
-	-- port map (DataIn -> s_addr_out, DataOut -> s_stack_out,
-	-- 	      Clk => Clk, Push => SaveCmdAddress, Pop => RestoreCmdAddress);
-=======
-	 -- -- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
-	 -- CRS: CallReturnStack
-	 -- generic map (addr_width => stack_addr_width, data_width => cmd_addr_width)
-	 -- port map (DataIn => s_addr_out, DataOut => s_stack_out,
-	 -- 	        Clk => Clk, Push => SaveCmdAddress, Pop => RestoreCmdAddress);
->>>>>>> master
+
+--	-- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
+--	 CRS: CallReturnStack
+--	 generic map (addr_width => stack_addr_width, data_width => cmd_addr_width)
+--	 port map (DataIn -> s_addr_out, DataOut -> s_stack_out,
+--	 	      Clk => Clk, Push => SaveCmdAddress, Pop => RestoreCmdAddress);
+--
+--	 -- -- Call/Return-Stapel - nicht Bestandteil der Belegarbeit
+--	  CRS: CallReturnStack
+--	  generic map (addr_width => stack_addr_width, data_width => cmd_addr_width)
+--	  port map (DataIn => s_addr_out, DataOut => s_stack_out,
+--	  	        Clk => Clk, Push => SaveCmdAddress, Pop => RestoreCmdAddress);
+
 
 	-- Befehlsspeicher
 	IM: P_ROM port map (Address => s_addr_out, Instruction => Instruction, Clk => Clk);
