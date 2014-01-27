@@ -67,14 +67,6 @@ BEGIN
           Out_port => Out_port
         );
 
-   -- Clock process definitions
-   Clk_process :process
-   begin
-		Clk <= '0';
-		wait for Clk_period/2;
-		Clk <= '1';
-		wait for Clk_period/2;
-   end process;
  
 	Reset <= '0', '1' after 2ns, '0' after 12ns;
 
