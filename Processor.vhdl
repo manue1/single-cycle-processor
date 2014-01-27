@@ -8,7 +8,7 @@ entity Processor is
 				cmd_addr_width: positive := 10; 	-- Adressbreite des Befehlsspeichers
 				stack_addr_width: positive := 5);
     port ( 	Clk 	: in  STD_LOGIC;
-			Reset 	: in  STD_LOGIC;
+				Reset 	: in  STD_LOGIC;
            	Out_port : out STD_LOGIC_VECTOR (data_width - 1 downto 0));
 end Processor;
 
@@ -17,7 +17,7 @@ architecture Structural of Processor is
 
 	component InstructionFetchUnit is
 		generic (	cmd_width: positive; -- Befehlsbreite
-					cmd_addr_width: positive); -- Adressbreite des Befehlsspeichers
+						cmd_addr_width: positive); -- Adressbreite des Befehlsspeichers
 		port (-- Datenleitungen
 				JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
 				Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
@@ -110,7 +110,7 @@ architecture Structural of Processor is
     	port ( 	A : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	           	B : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	           	Clk : in  STD_LOGIC;
-				Reset : in  STD_LOGIC;
+					Reset : in  STD_LOGIC;
 	           	ShiftCode : in  STD_LOGIC_VECTOR (3 downto 0);
 	           	OpCode : in  STD_LOGIC_VECTOR (4 downto 0);
 	           	Result : out  STD_LOGIC_VECTOR (data_width - 1 downto 0);
