@@ -2,7 +2,7 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 entity HardwareAccessUnit is
-	generic (data_width: positive); -- Datenbreite
+	generic (data_width: integer := 8); -- Datenbreite
 	port (	-- Datenleitungen
 			OPERAND_1: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Operand 1
 			OPERAND_2: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Operand 2
@@ -14,7 +14,7 @@ entity HardwareAccessUnit is
 			-- Steuerleitungen
 			CLK: in STD_LOGIC; -- Takt
 			WAIT_CNTRL: in STD_LOGIC; -- Abarbeitungszyklus verlaengern
-			Strobe: out STD_LOGIC; -- Lese— oder Schreibsteuerung
+			Strobe: out STD_LOGIC; -- Lese- oder Schreibsteuerung
 			READ_STROBE: out STD_LOGIC; -- Lesesteuerung
 			WRITE_STROBE: out STD_LOGIC; -- Schreibsteuerung
 			OP_CODE: in STD_LOGIC); -- Bits 17 des Befehlskodes
@@ -23,7 +23,7 @@ entity HardwareAccessUnit is
 end HardwareAccessUnit;
 
 architecture Behavioral of HardwareAccessUnit is
-	-- D—Flip-Flop mit Ruecksetz— und Freigabeeingang
+	-- D-Flip-Flop mit Ruecksetz- und Freigabeeingang
 	component DFlipFlop_RE
 		port (	C, D, E, R: in STD_LOGIC;
 				Q: out STD_LOGIC);
@@ -38,7 +38,7 @@ begin
 	OUT_PORT <= OPERAND_1;
 	RESULT <= IN_PORT;
 
-	-- Lese— und Schreibsteuerung
+	-- Lese- und Schreibsteuerung
 	reset <= not WAIT_CNTRL;
 	data_in <= not int_strobe;
 	CONTROL_DFF: DFlipFlop_RE

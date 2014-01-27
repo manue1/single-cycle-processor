@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Z:/picoblaze-processor/tb_hardware_access_unit_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_hardware_access_unit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="/tb_hardware_access_unit/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/op_code" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">op_code</obj_property>
+      <obj_property name="ObjectShortName">op_code</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/wait_cntrl" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wait_cntrl</obj_property>
+      <obj_property name="ObjectShortName">wait_cntrl</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/strobe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">strobe</obj_property>
+      <obj_property name="ObjectShortName">strobe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/read_strobe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">read_strobe</obj_property>
+      <obj_property name="ObjectShortName">read_strobe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/write_strobe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">write_strobe</obj_property>
+      <obj_property name="ObjectShortName">write_strobe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/operand_1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">operand_1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/out_port" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">out_port[7:0]</obj_property>
+      <obj_property name="ObjectShortName">out_port[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/operand_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">operand_2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand_2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/port_id" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">port_id[7:0]</obj_property>
+      <obj_property name="ObjectShortName">port_id[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[7:0]</obj_property>
+      <obj_property name="ObjectShortName">result[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_hardware_access_unit/in_port" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">in_port[7:0]</obj_property>
+      <obj_property name="ObjectShortName">in_port[7:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -5,10 +5,11 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 
 entity Full_Adder_3 is
-	generic (width: integer:= 8);
+	generic (width: integer := 8);
 	port (	A: in STD_LOGIC_VECTOR (width - 1 downto 0);
 				B: in STD_LOGIC_VECTOR (width - 1 downto 0);
 				Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
+				Ci: in STD_LOGIC;
 				Co: out STD_LOGIC);
 end Full_Adder_3;
 
@@ -39,7 +40,7 @@ begin
 	p <= A xor B;
 
 	-- Initialisierung der Carry-Chain
-	c(0) <= '0';
+	c(0) <= Ci;
 
 	-- Carry-Multiplexer
 	CM: for i in 0 to width - 1 generate

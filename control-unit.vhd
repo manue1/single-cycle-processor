@@ -35,21 +35,21 @@ architecture Behavior of ControlUnit is
 	-- Flag-Register
 	component FlagRegister
 		port (-- Datenleitungen
-			  CarryIn: in STD_LOGIC; -- Eingang des Carry-Flags
-			  CarryOut: out STD_LOGIC; -- Ausqang des Carry-Flags
-			  ZeroIn: in STD_LOGIC; -- Eingang des Zero-Flags
-			  ZeroOut: out STD_LOGIC; -- Ausgang des Zero-F1ags
-			  IEIn: in STD_LOGIC; -- Eingang des Interrupt-Enable-Flags
-			  IEOut: out STD_LOGIC; -- Ausgang des Interrupt-Enable-Flags
-			  -- Steuerleitungen
-			  Clk: in STD_LOGIC; -- Takt
-			  Reset: in STD_LOGIC; -- Rucksetzen
-			  WriteEnable: in STD_LOGIC; -- Schreibfreigabe fur Carry- und Zero-Flag
-			  IEWriteEnable: in STD_LOGIC; -- Schreibfreigabe fur Interrupt-Enable-Flag
-			  IntCode: in STD_LOGIC_VECTOR (1 downto 0)); -- Steuersignal bei Interrupts
-														  -- 00 -> normaler Programmablauf
-														  -- 10 -> Beginn einer Unterbrechung
-														  -- 01 -> Ende einer Unterbrechung
+			  			Ci: in STD_LOGIC; -- Eingang de: Carry-Flags
+						Co: out STD_LOGIC; -- Ausgang des Carry-Flags
+						Zi: in STD_LOGIC; -- Eingang des Zero-Flags
+						Zo: out STD_LOGIC; -- Ausganq des Zero-Flags
+						IEi: in STD_LOGIC; -- Eingang des Interrupt-Enable-Flags
+						IEo: out STD_LOGIC; -- Ausgang des Intenrupt-Enable-Flags
+						-- Steuerleitungen
+						Clk: in STD_LOGIC; -- Takt
+						Reset: in STD_LOGIC; -- Rucksetzen
+						WE: in STD_LOGIC; -- Schreibfreigabe fur carry- und Zero-Flag
+						IEWE: in STD_LOGIC; -- Schreibfreigabe fur Interrupt-Enable-Flag
+						IntCode: in STD_LOGIC_VECTOR (1 downto 0)); -- Steuersignal bei Interrupts
+						-- 00 -> normaler Programmablauf
+						-- 10 -> Beginn einer Unterbrechung
+						-- 01 -> Ende ener Unterbrechung
 	end component FlagRegister;
 
 	-- Carry-Flag
@@ -137,10 +137,10 @@ architecture Behavior of ControlUnit is
 	s_int_code <= (s_internal_interrupt, OpCode(4) and OpCode(3) and Opcode(2) and not OpCode(1));
 
 	FR: FlagRegister
-		port map (CarryIn => CarryIn, CarryOut => s_cf_output, ZeroIn => ZeroIn, ZeroOut => s_zf_output,
-				    IEIn => IEIn, IEOut => s_ief_output,
-					 Clk => Clk, Reset => s_internal_reset, WriteEnable => s_cf_zf_write_enable,
-					 IEWriteEnable => s_ief_write_enable, IntCode => s_int_code);
+		port map (Ci => CarryIn, Co => s_cf_output, Zi => ZeroIn, Zo => s_zf_output,
+				    IEi => IEIn, IEo => s_ief_output,
+					 Clk => Clk, Reset => s_internal_reset, WE => s_cf_zf_write_enable,
+					 IEWE => s_ief_write_enable, IntCode => s_int_code);
 
 	CarryOut <= s_cf_output;
 

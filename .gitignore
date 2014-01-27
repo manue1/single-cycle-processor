@@ -15,18 +15,15 @@
 *.pad
 *.par
 *.pcf
-*.prj
 *.ptwx
 *.rbb
 *.rbd
-*.stx
 *.syr
 *.twr
 *.twx
 *.unroutes
 *.ut
 *.xpi
-*.xst
 *_bitgen.xwbt
 *_envsettings.html
 *_map.map
@@ -41,6 +38,15 @@
 *_summary.xml
 *_usage.xml
 *_xst.xrpt
+*.prj
+*.exe
+*.ini
+*.wdb
+*.vdb
+*.sim
+*.stx
+*.xst
+
 
 # project-wide generated files
 *.gise
@@ -56,5 +62,6 @@ xst/
 _ngo/
 _xmsgs/
 *.xmsgs
+isim/
 
 .DS_Store

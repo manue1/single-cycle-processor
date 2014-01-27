@@ -9,6 +9,7 @@ entity Full_Subtracter_3 is
 	port (M: in STD_LOGIC_VECTOR (width - 1 downto 0);
 			S: in STD_LOGIC_VECTOR (width - 1 downto 0);
 			Q: out STD_LOGIC_VECTOR (width - 1 downto 0);
+			Ci: in STD_LOGIC;
 			Co: out STD_LOGIC);
 end Full_Subtracter_3;
 
@@ -31,7 +32,7 @@ begin
 	p <= not (M xor S);
 
 	-- Initialisierung der Carry-Chain
-	c(0) <= '1';
+	c(0) <= Ci;
 
 	-- Carry-Multiplexer
 	CM: for i in 0 to width - 1 generate

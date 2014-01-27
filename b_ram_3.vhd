@@ -1,5 +1,5 @@
 library IEEE;
-use IEEE.STD_LOGIC_1l64.ALL;
+use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity B_RAM_3 is
@@ -15,7 +15,7 @@ end B_RAM_3;
 architecture WriteFirst of B_RAM_3 is
 	-- Typ des Speichers definieren
 
-	type RAM_TYPE is array (0 to (2**addr_width) — 1) of
+	type RAM_TYPE is array (0 to (2**addr_width) - 1) of
 				STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	-- Speicher als interne Komponente definieren und initialisieren
 	signal ram: RAM_TYPE:= (others => (others => '0'));
@@ -27,7 +27,7 @@ begin
 	begin
 		if (rising_edge (Clk)) then
 			if (WE = '1') then
-				-- synchroner Lese— und Schreibzugriff
+				-- synchroner Lese- und Schreibzugriff
 				ram(conv_integer (Addr)) <= DI;
 				DO <= DI;
 			else
