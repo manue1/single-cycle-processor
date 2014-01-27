@@ -1,5 +1,0 @@
-set -tmpdir "G:/picoblaze-processor/xst/projnav.tmp"
-set -xsthdpdir "G:/picoblaze-processor/xst"
-elaborate
--ifn D_RAM.prj
--ifmt mixed

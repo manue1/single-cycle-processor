@@ -12,12 +12,14 @@ entity Processor is
            	Out_port : out STD_LOGIC_VECTOR (data_width - 1 downto 0));
 end Processor;
 
+
 architecture Structural of Processor is
 
 	component InstructionFetchUnit is
+		generic (	cmd_width: positive; -- Befehlsbreite
+					cmd_addr_width: positive); -- Adressbreite des Befehlsspeichers
 		port (-- Datenleitungen
 				JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
-				Opcode: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Opcode eingang
 				Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
 				-- Steuerleitungen
 				Clk: in STD_LOGIC; -- Takt
@@ -29,7 +31,15 @@ architecture Structural of Processor is
 				SaveCmdAddress: in STD_LOGIC); -- Sichern der Befehlsadresse auf dem Stack
 	end component;
 
+	-- Signals in & out of InstructionFetchUnit
+	signal s_jumpaddr_idu_ifu: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
+	-- ========================================
+
+
 	component InstructionDecodeUnit is
+		generic (	cmd_addr_width: positive; -- Adressbreite des Befehlsspeichers
+					cmd_width: positive; -- Befehlsbreite (> 17)
+					data_width: positive); -- Datenbreite
 		port (-- Datenleitungen
 				Instruction: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Befehl
 				Address: out STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungziel
@@ -43,10 +53,16 @@ architecture Structural of Processor is
 				OpCode: out STD_LOGIC_VECTOR (4 downto 0); -- Kodierung des Befehls
 				ShiftCode: out STD_LOGIC_VECTOR (3 downto 0); -- Kodierung des Schiebe- und Rotationsbefehls
 				Condition: out STD_LOGIC_VECTOR (2 downto 0));  -- Sprungbedingung
-
 	end component;
 
+	-- Signals in & out of InstructionDecodeUnit
+	signal s_address_idu_dmu: STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0);
+	signal s_iebit_idu: STD_LOGIC;
+	signal s_op1: STD_LOGIC_VECTOR (data_width - 1 downto 0);
+	signal s_op2: STD_LOGIC_VECTOR (data_width - 1 downto 0);
+	signal s_shiftcode: STD_LOGIC_VECTOR (3 downto 0);
 	-- ========================================
+
 	component ControlUnit is
 		port (-- Datenleitungen
 			  CarryIn: in STD_LOGIC; -- Eingang des Carry-Flags
@@ -71,13 +87,13 @@ architecture Structural of Processor is
 			  IOStrobe: out STD_LOGIC); -- Steuersignal fur den Hardwarezugriff
 	end component;
 
-	-- --------------------------------------
 	-- Signals in & out of ControlUnit
 	signal s_ci_alu_cu: STD_LOGIC;
 	signal s_co_alu_cu: STD_LOGIC;
 	signal s_zi_alu_cu: STD_LOGIC;
-	signal s_opcode_idu_cu: STD_LOGIC_VECTOR (4 downto 0);
-	signal s_condition_idu_cu STD_LOGIC_VECTOR (2 downto 0);
+	signal s_interruptack_cu: STD_LOGIC;
+	signal s_opcode_cu: STD_LOGIC_VECTOR (4 downto 0);
+	signal s_condition_idu_cu: STD_LOGIC_VECTOR (2 downto 0);
 	signal s_internalreset_cu_alu: STD_LOGIC;
 	signal s_we_cu: STD_LOGIC;
 	signal s_loadjumpaddr_cu_ifu: STD_LOGIC;
@@ -90,6 +106,7 @@ architecture Structural of Processor is
 	-- ========================================
 
 	component ArithmeticLogicUnit is
+	generic (	data_width : positive);
     	port ( 	A : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	           	B : in  STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	           	Clk : in  STD_LOGIC;
@@ -100,16 +117,21 @@ architecture Structural of Processor is
 	           	ZF : out  STD_LOGIC;
 	           	CF : out  STD_LOGIC);
 	end component;
+	-- ========================================
 
 	component DataMemoryUnit is
+		generic (	addr_width: positive; -- Adressbreite
+					data_width: positive); -- Datenbreite
 		port (	Addr: in STD_LOGIC_VECTOR (addr_width - 1 downto 0); -- Adresse
-				DI: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Daceneingang
+				DI: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Dateneingang
 				DO: out STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Datenausgang
 				Clk: in STD_LOGIC; -- Takt
 				WE: in STD_LOGIC); -- Schreibfreigabe
 	end component;
+	-- ========================================
 
 	component HardwareAccessUnit is
+		generic (data_width: positive); -- Datenbreite
 		port (	-- Datenleitungen
 				OPERAND_1: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Operand 1
 				OPERAND_2: in STD_LOGIC_VECTOR (data_width - 1 downto 0); -- Operand 2
@@ -128,9 +150,17 @@ architecture Structural of Processor is
 										-- 0 -> INPUT
 										-- 1 -> OUTPUT
 	end component;
+	-- Signals
+	signal s_strobe_hau: STD_LOGIC;
+	signal s_rstrobe_hau: STD_LOGIC;
+	signal s_wstrobe_hau: STD_LOGIC;
+	-- ========================================
+
 
 
 	-- DATENPFAD-UMSCHALTER
+	-- Instruction for IDU and IFU
+	signal instruction: STD_LOGIC_VECTOR (cmd_width - 1 downto 0);
 	-- Ergebnis der Verarbeitung
 	signal computation_result: STD_LOGIC_VECTOR (data_width - 1 downto 0);
 	-- Ergebnis des Speicherzugriffes
@@ -145,7 +175,8 @@ architecture Structural of Processor is
 
 	-- 2-zu-1 Multiplexer
 	component Multiplexer_2_to_1
-		port (	A, B: in STD_LOGIC;
+		port (	A: in STD_LOGIC;
+				B: in STD_LOGIC;
 				Y: out STD_LOGIC;
 				S: in STD_LOGIC);
 	end component Multiplexer_2_to_1;
@@ -160,94 +191,102 @@ architecture Structural of Processor is
 	begin
 	CU: ControlUnit
 		port map (-- Datenleitungen
-			  CarryIn => s_ci_alu_cu; -- Eingang des Carry-Flags
-			  CarryOut => s_co_alu_cu; -- Ausgang des Carry-Flags
-			  ZeroIn => s_zi_alu_cu; -- Eingang des Zero-Flags
-			  IEIn => '0'; -- Eingang des Interrupt-Enab1e-Flags
+			  CarryIn => s_ci_alu_cu, -- Eingang des Carry-Flags
+			  CarryOut => s_co_alu_cu, -- Ausgang des Carry-Flags
+			  ZeroIn => s_zi_alu_cu, -- Eingang des Zero-Flags
+			  IEIn => '0', -- Eingang des Interrupt-Enab1e-Flags
 			  -- Steuerleitungen
-			  Clk => Clk; -- Takt
-			  Reset => Reset; -- Ruecksetzen
-			  Interrupt => '0'; -- Interrupt-Eingang
-			  InterruptAck => s_interruptack_cu; -- Bestatigung einer Unterbrechung
-			  OpCode => s_opcode_idu_cu; -- Kodierung des Befehls
-			  Condition => s_condition_idu_cu; -- Sprungbedingung
-			  InternalReset => s_internalreset_cu_alu; -- im Prozessor benutztes Reset-Signal
-			  PCWrite => s_we_cu; -- Schreibfreigabe des Befehlszahlers
-			  LoadJumpAddress => s_loadjumpaddr_cu_ifu; -- Sprungadresse laden
-			  LoadInterruptAddress => s_loadintaddr_cu; -- Laden der Interrupt-Adresse
-			  SaveCmdAddress => s_savecmdaddr_cu_ifu; -- Sichern der Befehlsadresse auf dem Stack
-			  RestoreCmdAddress => s_restorecmdaddr_cu_ifu; -- Laden einer Adresse vom Stack
-			  Regwrite => s_regwrite_cu_idu; -- Schreibfreigabe des Registersatzes
-			  Memwrite => s_memwrite_cu_dmu; -- Schreibfreigabe des Datenspeichers
+			  Clk => Clk, -- Takt
+			  Reset => Reset, -- Ruecksetzen
+			  Interrupt => '0', -- Interrupt-Eingang
+			  InterruptAck => s_interruptack_cu, -- Bestatigung einer Unterbrechung
+			  OpCode => s_opcode_cu, -- Kodierung des Befehls
+			  Condition => s_condition_idu_cu, -- Sprungbedingung
+			  InternalReset => s_internalreset_cu_alu, -- im Prozessor benutztes Reset-Signal
+			  PCWrite => s_we_cu, -- Schreibfreigabe des Befehlszahlers
+			  LoadJumpAddress => s_loadjumpaddr_cu_ifu, -- Sprungadresse laden
+			  LoadInterruptAddress => s_loadintaddr_cu, -- Laden der Interrupt-Adresse
+			  SaveCmdAddress => s_savecmdaddr_cu_ifu, -- Sichern der Befehlsadresse auf dem Stack
+			  RestoreCmdAddress => s_restorecmdaddr_cu_ifu, -- Laden einer Adresse vom Stack
+			  Regwrite => s_regwrite_cu_idu, -- Schreibfreigabe des Registersatzes
+			  Memwrite => s_memwrite_cu_dmu, -- Schreibfreigabe des Datenspeichers
 			  IOStrobe => s_iostrobe_cu_hau); -- Steuersignal fur den Hardwarezugriff
 
 	IFU: InstructionFetchUnit
+		generic map (	cmd_width => cmd_width,
+						cmd_addr_width => cmd_addr_width)
 		port map (-- Datenleitungen
-				JumpAddress => ; -- Sprungadresse
-				Opcode => ; -- Opcode eingang
-				Instruction => ; -- naechster Befehl
+				JumpAddress => s_jumpaddr_idu_ifu, -- Sprungadresse
+				Instruction => instruction, -- naechster Befehl
 				-- Steuerleitungen
-				Clk =>; -- Takt
-				WriteEnable =>; -- Schreibfreigabe des Befehlszaehlers
-				LoadStartAddress =>; -- Startadresse laden
-				LoadJumpAddress =>; -- Sprungadresse laden
-				RestoreCmdAddress =>; -- Laden einer Adresse vom Stack
-				LoadInterruptAddress =>; -- Interrupt-Adresse laden
-				SaveCmdAddress =>); -- Sichern der Befehlsadresse auf dem Stack
+				Clk => Clk, -- Takt
+				WriteEnable => s_we_cu, -- Schreibfreigabe des Befehlszaehlers
+				LoadStartAddress => '0', -- Startadresse laden
+				LoadJumpAddress => s_loadjumpaddr_cu_ifu, -- Sprungadresse laden
+				RestoreCmdAddress => s_restorecmdaddr_cu_ifu, -- Laden einer Adresse vom Stack
+				LoadInterruptAddress => s_loadintaddr_cu, -- Interrupt-Adresse laden
+				SaveCmdAddress => s_savecmdaddr_cu_ifu); -- Sichern der Befehlsadresse auf dem Stack
 
 	IDU: InstructionDecodeUnit
+		generic map (	cmd_addr_width => cmd_addr_width, -- Adressbreite des Befehlsspeichers
+						cmd_width => cmd_width, -- Befehlsbreite (> 17)
+						data_width => data_width) -- Datenbreite
 		port map (-- Datenleitungen
-				Instruction => ; -- Befehl
-				Address => ; -- Sprungziel
-				IEBit =>; -- Interrupt-Enable-Bit
-				Operand1 =>; -- 1. Operand
-				Operand2 =>; -- 2. Operand
-				Result =>; -- Ergebnis der Verarbeitung
+				Instruction => instruction, -- Befehl
+				Address => s_address_idu_dmu, -- Sprungziel
+				IEBit => s_iebit_idu, -- Interrupt-Enable-Bit
+				Operand1 => s_op1, -- 1. Operand
+				Operand2 => s_op2, -- 2. Operand
+				Result => result, -- Ergebnis der Verarbeitung
 			  -- Steuerleitungen
-				Clk =>; -- Takt fur Registersatz
-				WriteEnable =>; -- Schreibfreigabe fur Registersatz
-				OpCode => ; -- Kodierung des Befehls
-				ShiftCode => ; -- Kodierung des Schiebe- und Rotationsbefehls
-				Condition => );  -- Sprungbedingung
+				Clk => Clk, -- Takt fur Registersatz
+				WriteEnable => s_we_cu, -- Schreibfreigabe fur Registersatz
+				OpCode => s_opcode_cu, -- Kodierung des Befehls
+				ShiftCode => s_shiftcode, -- Kodierung des Schiebe- und Rotationsbefehls
+				Condition => s_condition_idu_cu);  -- Sprungbedingung
 
 	ALU: ArithmeticLogicUnit
-	port map ( 	A => ;
-           	B => ;
-           	Clk => ;
-			Reset => ;
-           	ShiftCode => ;
-           	OpCode => ;
-           	Result => ;
-           	ZF => ;
-           	CF => );
+		generic map (	data_width => data_width) -- Datenbreite
+		port map ( 	A => s_op1,
+		           	B => s_op2,
+		           	Clk => Clk,
+					Reset => s_internalreset_cu_alu,
+		           	ShiftCode => s_shiftcode,
+		           	OpCode => s_opcode_cu,
+		           	Result => computation_result,
+		           	ZF => s_zi_alu_cu,
+		           	CF => s_ci_alu_cu);
 
 
-	DMU: DataMemoryUnit 
-		port map (	Addr => ; -- Adresse
-				DI => ; -- Daceneingang
-				DO => ; -- Datenausgang
-				Clk => ; -- Takt
-				WE => ); -- Schreibfreigabe
+	DMU: DataMemoryUnit
+		generic map (	addr_width => cmd_addr_width, -- Adressbreite
+						data_width => data_width) -- Datenbreite
+		port map (	Addr => s_address_idu_dmu, -- Adresse
+					DI => memory_result, -- Daceneingang
+					DO => Out_port, -- Datenausgang
+					Clk => Clk, -- Takt
+					WE => s_we_cu); -- Schreibfreigabe
 
 
-	HAU: HardwareAccessUnit 
+	HAU: HardwareAccessUnit
+		generic map (	data_width => data_width) -- Datenbreite
 		port map (	-- Datenleitungen
-				OPERAND_1 => ; -- Operand 1
-				OPERAND_2 => ; -- Operand 2
-				RESULT => ; -- Ergebnis
-				-- Ports
-				IN_PORT => ; -- Dateneingang
-				PORT_ID => ; -- Hardware-Adresse
-				OUT_PORT =>; -- Datenausgang
-				-- Steuerleitungen
-				CLK =>; -- Takt
-				WAIT_CNTRL =>; -- Abarbeitungszyklus verlaengern
-				Strobe =>; -- Lese- oder Schreibsteuerung
-				READ_STROBE =>; -- Lesesteuerung
-				WRITE_STROBE =>; -- Schreibsteuerung
-				OP_CODE =>); -- Bits 17 des Befehlskodes
-										-- 0 -> INPUT
-										-- 1 -> OUTPUT
+					OPERAND_1 => s_op1, -- Operand 1
+					OPERAND_2 => s_op2, -- Operand 2
+					RESULT => io_result, -- Ergebnis
+					-- Ports
+					IN_PORT => "1X1X1X1X", -- Dateneingang
+					PORT_ID => s_op2, -- Hardware-Adresse
+					OUT_PORT => s_op1, -- Datenausgang
+					-- Steuerleitungen
+					CLK => Clk, -- Takt
+					WAIT_CNTRL => s_iostrobe_cu_hau, -- Abarbeitungszyklus verlaengern
+					Strobe => s_strobe_hau, -- Lese- oder Schreibsteuerung
+					READ_STROBE => s_rstrobe_hau, -- Lesesteuerung
+					WRITE_STROBE => s_wstrobe_hau, -- Schreibsteuerung
+					OP_CODE => s_opcode_cu(4)); -- Bits 17 des Befehlskodes
+												-- 0 -> INPUT
+												-- 1 -> OUTPUT
 
 
 	-- Multiplexer fur den Datenpfad
@@ -262,14 +301,14 @@ architecture Structural of Processor is
 					B => memory_result(i),
 					Y => d_mux_out_1(i),
 					S => d_mux_control_1);
-		D_MUX_2: Mu1tiplexer_2_to_1
+		D_MUX_2: Multiplexer_2_to_1
 		port map ( 	A => d_mux_out_1(i),
-					B => operand_2(i),
+					B => s_op2(i),
 					Y => d_mux_out_2(i),
 					S => d_mux_control_2);
-		D_MUX_3: Multip1exer_2_to_1
+		D_MUX_3: Multiplexer_2_to_1
 		port map ( 	A => d_mux_out_2(i),
-					B => computation_result,
+					B => computation_result(i),
 					Y => result(i),
 					S => d_mux_control_3);
 	end generate G_MUX;

@@ -1,3 +1,0 @@
-vhdl work "carry-chain-addierer.vhd"
-vhdl work "2-1-multiplexer.vhd"
-vhdl work "arithmetic-unit.vhd"

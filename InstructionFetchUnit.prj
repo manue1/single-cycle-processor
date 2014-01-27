@@ -1,2 +1,0 @@
-vhdl work "p_rom.vhd"
-vhdl work "instruction-fetch-unit.vhd"

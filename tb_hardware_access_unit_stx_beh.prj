@@ -1,3 +1,0 @@
-vhdl isim_temp "dff_re.vhd"
-vhdl isim_temp "hardware-access-unit.vhd"
-vhdl isim_temp "tb_hardware_access_unit.vhd"

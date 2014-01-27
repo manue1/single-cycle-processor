@@ -15,3 +15,10 @@ begin
 	Y <= 	A when (S = '0') else
 			B when (S = '1');
 end Behavior;
+
+	-- 2-zu-1 Multiplexer
+	component Multiplexer_2_to_1
+		port (	A, B: in STD_LOGIC;
+				Y: out STD_LOGIC;
+				S: in STD_LOGIC);
+	end component Multiplexer_2_to_1;

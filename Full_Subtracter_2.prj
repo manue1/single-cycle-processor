@@ -1,3 +1,0 @@
-vhdl work "volladdierer.vhd"
-vhdl work "carry-ripple+lookahead-volladdierer.vhd"
-vhdl work "vollsubstrahierer-variante-2.vhd"

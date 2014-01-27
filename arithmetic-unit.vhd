@@ -52,6 +52,7 @@ architecture Behavior of ArithmeticUnit is
 		port (M: in STD_LOGIC_VECTOR (data_width - 1 downto 0);
 				S: in STD_LOGIC_VECTOR (data_width - 1 downto 0);
 				Q: out STD_LOGIC_VECTOR (data_width - 1 downto 0);
+				Ci: in STD_LOGIC;
 				Co: out STD_LOGIC);
 	end component;
 
@@ -83,36 +84,12 @@ begin
 	-- Umschaltung des Eingangsuebertrages
 	CI_MUX: Multiplexer_2_to_1 port map(A => '0', B => Ci, Y => cyi, S => Op(0));
 
-	-- Komponente zum Addieren --
-	
-	-- ADD Komponent
-
---G_ADD: for i in result'RANGE generate
---	ADD: Full_Adder
---		port map(E1 => op1(i), E2 => B(i), Ci => cyi, Q => result(i), Co => Co);
---end generate G_ADD;
-		
 	-- ADDCY Komponent
 	
 	ADDCY: Full_Adder_3
 		generic map (width => data_width)
 		port map(A => op1, B => B, Q => result, Ci => cyi, Co => Co);
 		
-	-- Komponente zum Substrahieren --
-
-	-- SUB und COMPARE Komponent
-
---G_SUB: for i in op1'RANGE generate
---	SUB: Full_Subtracter
---		port map(M => op1(i), S => B(i), Ci => cyi, Q => result(i), Co => Co);
---end generate G_SUB;
-		
-	-- SUBCY Komponent
---	
---	SUBCY: Full_Subtracter_3
---		generic map (width => data_width)
---		port map(M => op1, S => B, Q => result, Co => Co);
-
 	-- Umschaltung des Ergebnisses
 	process (Op, result)
 	begin

@@ -1,4 +1,0 @@
-vhdl isim_temp "carry-chain-addierer.vhd"
-vhdl isim_temp "2-1-multiplexer.vhd"
-vhdl isim_temp "arithmetic-unit.vhd"
-vhdl isim_temp "tb_arithmeticunit.vhd"

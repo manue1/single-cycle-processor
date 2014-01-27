@@ -5,15 +5,14 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 entity InstructionFetchUnit is
 	-- for Testbench
 	generic (	cmd_width: integer := 18; -- Befehlsbreite
-				cmd_addr_width: integer := 10; -- Adressbreite des Befehlsspeichers
-				stack_addr_width: integer := 5); -- Adressbreite des Call/return-Stapels
+				cmd_addr_width: integer := 10); -- Adressbreite des Befehlsspeichers
+				--stack_addr_width: integer := 5); -- Adressbreite des Call/return-Stapels
 	-- -- for Processor
 	-- generic (	cmd_width: cmd_width; -- Befehlsbreite
 	-- 			cmd_addr_width: cmd_addr_width; -- Adressbreite des Befehlsspeichers
 	-- 			stack_addr_width: stack_addr_width); -- Adressbreite des Call/return-Stapels
 	port (-- Datenleitungen
 			JumpAddress: in STD_LOGIC_VECTOR (cmd_addr_width - 1 downto 0); -- Sprungadresse
-			Opcode: in STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- Opcode eingang
 			Instruction: out STD_LOGIC_VECTOR (cmd_width - 1 downto 0); -- naechster Befehl
 			-- Steuerleitungen
 			Clk: in STD_LOGIC; -- Takt

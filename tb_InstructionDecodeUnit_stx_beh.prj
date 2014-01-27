@@ -1,3 +1,0 @@
-vhdl isim_temp "d_ram_2.vhd"
-vhdl isim_temp "instruction-decode-unit.vhd"
-vhdl isim_temp "tb_InstructionDecodeUnit.vhd"

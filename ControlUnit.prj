@@ -1,7 +1,0 @@
-vhdl work "dff_re.vhd"
-vhdl work "2-1-multiplexer.vhd"
-vhdl work "flag-register.vhd"
-vhdl work "dff_a_s.vhd"
-vhdl work "dff_a_re.vhd"
-vhdl work "dff_a_r.vhd"
-vhdl work "control-unit.vhd"
