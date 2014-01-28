@@ -9,7 +9,11 @@ entity Processor is
 				stack_addr_width: positive := 5);
 	port ( 	Clk 	: in  STD_LOGIC;
 			Reset 	: in  STD_LOGIC;
-       		Out_port : out STD_LOGIC_VECTOR (data_width - 1 downto 0));
+       		Out_port : out STD_LOGIC_VECTOR (data_width - 1 downto 0);
+       		In_port : in STD_LOGIC_VECTOR (data_width - 1 downto 0);
+			Strobe: out STD_LOGIC; -- Lese- oder Schreibsteuerung
+			READ_STROBE: out STD_LOGIC; -- Lesesteuerung
+			WRITE_STROBE: out STD_LOGIC);
 end Processor;
 
 
@@ -152,10 +156,6 @@ architecture Structural of Processor is
 										-- 0 -> INPUT
 										-- 1 -> OUTPUT
 	end component;
-	-- Signals
-	signal s_strobe_hau: STD_LOGIC;
-	signal s_rstrobe_hau: STD_LOGIC;
-	signal s_wstrobe_hau: STD_LOGIC;
 	-- ========================================
 
 
@@ -277,15 +277,15 @@ architecture Structural of Processor is
 					OPERAND_2 => s_op2, -- Operand 2
 					RESULT => io_result, -- Ergebnis
 					-- Ports
-					IN_PORT => "1X1X1X1X", -- Dateneingang
+					IN_PORT => In_port, -- Dateneingang
 					PORT_ID => s_op2, -- Hardware-Adresse
 					OUT_PORT => s_op1, -- Datenausgang
 					-- Steuerleitungen
 					CLK => Clk, -- Takt
 					WAIT_CNTRL => s_iostrobe_cu_hau, -- Abarbeitungszyklus verlaengern
-					Strobe => s_strobe_hau, -- Lese- oder Schreibsteuerung
-					READ_STROBE => s_rstrobe_hau, -- Lesesteuerung
-					WRITE_STROBE => s_wstrobe_hau, -- Schreibsteuerung
+					Strobe => Strobe, -- Lese- oder Schreibsteuerung
+					READ_STROBE => READ_STROBE, -- Lesesteuerung
+					WRITE_STROBE => WRITE_STROBE, -- Schreibsteuerung
 					OP_CODE => s_opcode_cu(4)); -- Bits 17 des Befehlskodes
 												-- 0 -> INPUT
 												-- 1 -> OUTPUT
@@ -314,6 +314,4 @@ architecture Structural of Processor is
 					Y => result(i),
 					S => d_mux_control_3);
 	end generate G_MUX;
-	
-	Out_port <= result;
 end Structural;

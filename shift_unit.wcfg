@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Z:/picoblaze-processor/tb_shift_unit_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_shift_unit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="12" />
+   <wvobject fp_name="divider8" type="divider">
+      <obj_property name="label">Steuerleitungen</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/op" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">op[1:0]</obj_property>
+      <obj_property name="ObjectShortName">op[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/dir" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">dir</obj_property>
+      <obj_property name="ObjectShortName">dir</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/extbit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">extbit</obj_property>
+      <obj_property name="ObjectShortName">extbit</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider9" type="divider">
+      <obj_property name="label">Datenleitungen</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/a" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">a[7:0]</obj_property>
+      <obj_property name="ObjectShortName">a[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/ci" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ci</obj_property>
+      <obj_property name="ObjectShortName">ci</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider10" type="divider">
+      <obj_property name="label">Interne Signale</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/uut/temp_bit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">temp_bit</obj_property>
+      <obj_property name="ObjectShortName">temp_bit</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider11" type="divider">
+      <obj_property name="label">Ausgangssignale</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/q" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">q[7:0]</obj_property>
+      <obj_property name="ObjectShortName">q[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_shift_unit/co" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">co</obj_property>
+      <obj_property name="ObjectShortName">co</obj_property>
+   </wvobject>
+</wave_config>

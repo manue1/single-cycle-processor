@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Z:/picoblaze-processor/tb_ControlUnit_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_controlunit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="11" />
+   <wave_markers>
+      <marker time="1000000000" label="" />
+   </wave_markers>
+   <wvobject fp_name="/tb_controlunit/clk" type="logic" db_ref_id="1">
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+      <obj_property name="label">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/s_reset_1" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_reset_1</obj_property>
+      <obj_property name="ObjectShortName">s_reset_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/s_internal_reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_internal_reset</obj_property>
+      <obj_property name="ObjectShortName">s_internal_reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/internalreset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">internalreset</obj_property>
+      <obj_property name="ObjectShortName">internalreset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/s_zf_output" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_zf_output</obj_property>
+      <obj_property name="ObjectShortName">s_zf_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/s_cf_output" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_cf_output</obj_property>
+      <obj_property name="ObjectShortName">s_cf_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/s_ief_output" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_ief_output</obj_property>
+      <obj_property name="ObjectShortName">s_ief_output</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/regwrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">regwrite</obj_property>
+      <obj_property name="ObjectShortName">regwrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/memwrite" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">memwrite</obj_property>
+      <obj_property name="ObjectShortName">memwrite</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_controlunit/uut/s_io_wait" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">s_io_wait</obj_property>
+      <obj_property name="ObjectShortName">s_io_wait</obj_property>
+   </wvobject>
+</wave_config>

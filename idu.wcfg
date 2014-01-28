@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Z:/picoblaze-processor/tb_InstructionDecodeUnit_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="tb_instructiondecodeunit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="23" />
+   <wvobject fp_name="divider43" type="divider">
+      <obj_property name="label">Befehlsdekoder</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[17:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[17:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/opcode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">opcode[4:0]</obj_property>
+      <obj_property name="ObjectShortName">opcode[4:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/s_addr_1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_addr_1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_addr_1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/s_addr_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_addr_2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">s_addr_2[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/s_const_value" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_const_value[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_const_value[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/condition" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">condition[2:0]</obj_property>
+      <obj_property name="ObjectShortName">condition[2:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address[9:0]</obj_property>
+      <obj_property name="ObjectShortName">address[9:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/shiftcode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">shiftcode[3:0]</obj_property>
+      <obj_property name="ObjectShortName">shiftcode[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/iebit" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iebit</obj_property>
+      <obj_property name="ObjectShortName">iebit</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider47" type="divider">
+      <obj_property name="label">Registersatz</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/writeenable" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">writeenable</obj_property>
+      <obj_property name="ObjectShortName">writeenable</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/address1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address1[3:0]</obj_property>
+      <obj_property name="ObjectShortName">address1[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/datain" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">datain[7:0]</obj_property>
+      <obj_property name="ObjectShortName">datain[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/dataout1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dataout1[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout1[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/address2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address2[3:0]</obj_property>
+      <obj_property name="ObjectShortName">address2[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/RF/dataout2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dataout2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider56" type="divider">
+      <obj_property name="label">Multiplexer</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/s_const_value" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_const_value[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_const_value[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/uut/s_operand_2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">s_operand_2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">s_operand_2[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/instruction[12]" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">[12]</obj_property>
+      <obj_property name="ObjectShortName">instruction[12]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_instructiondecodeunit/operand2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">operand2[7:0]</obj_property>
+      <obj_property name="ObjectShortName">operand2[7:0]</obj_property>
+   </wvobject>
+</wave_config>

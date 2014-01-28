@@ -64,9 +64,13 @@ BEGIN
 		wait for Clk_period/2;
    end process;
  
-   WriteEnable <= '1' after 7ns, '0' after 57ns;
+
+   WriteEnable <= '1' after 7ns, '0' after 57ns, '1' after 70ns;
    LoadStartAddress <= '1' after 7ns, '0' after 17ns;
-   LoadJumpAddress <= '1' after 37ns;
-   JumpAddress <= "0100000000" after 37ns, "0000010000" after 47ns;
+   LoadJumpAddress <= '1' after 37ns, '0' after 57ns;
+   JumpAddress <= "UUUUUUUUUU", "0100000000" after 37ns, "0000010000" after 47ns, "UUUUUUUUUU" after 57ns;
+   LoadInterruptAddress <= '1' after 27ns, '0' after 37ns;
+   SaveCmdAddress <= '1' after 27ns,  '0' after 37ns, '1' after 47ns, '0' after 57ns;
+   RestoreCmdAddress <= '1' after 77ns, '0' after 87ns, '1' after 97ns, '0' after 107ns;
 
 END;

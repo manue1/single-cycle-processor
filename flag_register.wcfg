@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Z:/picoblaze-processor/tb_flag_register_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="std_logic_1164" />
+            <top_module name="tb_flag_register" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="24" />
+   <wvobject fp_name="/tb_flag_register/intcode" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">intcode[1:0]</obj_property>
+      <obj_property name="ObjectShortName">intcode[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/we" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">we</obj_property>
+      <obj_property name="ObjectShortName">we</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/ce" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ce</obj_property>
+      <obj_property name="ObjectShortName">ce</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/zi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zi</obj_property>
+      <obj_property name="ObjectShortName">zi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/iei" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iei</obj_property>
+      <obj_property name="ObjectShortName">iei</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/iewe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iewe</obj_property>
+      <obj_property name="ObjectShortName">iewe</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider13" type="divider">
+      <obj_property name="label">Carry-Flag</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/ci" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ci</obj_property>
+      <obj_property name="ObjectShortName">ci</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/cfi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cfi</obj_property>
+      <obj_property name="ObjectShortName">cfi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/cfshadow" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">cfshadow</obj_property>
+      <obj_property name="ObjectShortName">cfshadow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/co" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">co</obj_property>
+      <obj_property name="ObjectShortName">co</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider14" type="divider">
+      <obj_property name="label">Zero-Flag</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/zi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zi</obj_property>
+      <obj_property name="ObjectShortName">zi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/zfo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zfo</obj_property>
+      <obj_property name="ObjectShortName">zfo</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/zfshadow" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zfshadow</obj_property>
+      <obj_property name="ObjectShortName">zfshadow</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/zo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">zo</obj_property>
+      <obj_property name="ObjectShortName">zo</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider15" type="divider">
+      <obj_property name="label">Interrupt Enable Flag</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="BkColor">128 128 255</obj_property>
+      <obj_property name="TextColor">230 230 230</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/iei" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iei</obj_property>
+      <obj_property name="ObjectShortName">iei</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/iewe" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iewe</obj_property>
+      <obj_property name="ObjectShortName">iewe</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/iece" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iece</obj_property>
+      <obj_property name="ObjectShortName">iece</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/uut/iefi" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">iefi</obj_property>
+      <obj_property name="ObjectShortName">iefi</obj_property>
+   </wvobject>
+   <wvobject fp_name="/tb_flag_register/ieo" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">ieo</obj_property>
+      <obj_property name="ObjectShortName">ieo</obj_property>
+   </wvobject>
+</wave_config>
